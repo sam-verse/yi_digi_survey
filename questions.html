@@ -1730,42 +1730,52 @@ async function recordScores(scores) {
     }
 }
 
+function createQuestionElement(questionData, questionNumber) {
+    const sectionQuestions = [7, 7, 10, 7, 4, 5, 5, 5, 3];
+    let sectionNumber = 1;
+    let questionCount = 0;
 
-        function createQuestionElement(questionData, questionNumber) {
-            const questionElement = document.createElement('main');
-            questionElement.className = 'container';
-            questionElement.id = `question${questionNumber}`;
-            questionElement.style.display = questionNumber === 1 ? 'flex' : 'none';
-
-            questionElement.innerHTML = `
-                <header class="header">
-                    <div class="menu-icon" onclick="toggleMenu()">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </header>
-
-                <div class="progress-container">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-
-                <div class="section-number">Section ${Math.ceil(questionNumber / 7)}</div>
-                <h2>${questionData.category}</h2>
-                <h3 style="text-align: center;" data-question-number="${questionNumber}">${questionData.question}</h3>
-
-                <div class="options" id="options${questionNumber}">
-                    ${questionData.options.map(option => `
-                        <button class="option" onclick="selectOption(this)">${option.text}</button>
-                    `).join('')}
-                </div>
-
-                <button class="submitAnswer" onclick="submitAnswer()">SUBMIT</button>
-            `;
-
-            return questionElement;
+    for (let i = 0; i < sectionQuestions.length; i++) {
+        questionCount += sectionQuestions[i];
+        if (questionNumber <= questionCount) {
+            sectionNumber = i + 1;
+            break;
         }
+    }
 
+    const questionElement = document.createElement('main');
+    questionElement.className = 'container';
+    questionElement.id = `question${questionNumber}`;
+    questionElement.style.display = questionNumber === 1 ? 'flex' : 'none';
+
+    questionElement.innerHTML = `
+        <header class="header">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="section-number">Section ${sectionNumber}</div>
+        <h2>${questionData.category}</h2>
+        <h3 style="text-align: center;" data-question-number="${questionNumber}">${questionData.question}</h3>
+
+        <div class="options" id="options${questionNumber}">
+            ${questionData.options.map(option => `
+                <button class="option" onclick="selectOption(this)">${option.text}</button>
+            `).join('')}
+        </div>
+
+        <button class="submitAnswer" onclick="submitAnswer()">SUBMIT</button>
+    `;
+
+    return questionElement;
+}
         function initializeQuestions() {
             const questionContainer = document.getElementById('questionContainer');
             questionsData.forEach((questionData, index) => {
