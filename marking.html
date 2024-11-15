@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Digital Safety Audit - Assess and Strengthen Your Online Security">
+    <meta name="description" content="The Digital Safety Audit helps assess your online security, identifying vulnerabilities cybercriminals could exploit. Discover essential steps to fortify your digital defenses with this initiative by Masoom, Young Indians.">
+    <meta name="keywords" content="Digital Safety Audit, Online Security Assessment, Cybersecurity Audit, Masoom Young Indians, Digital Vulnerability Check, Cyber Defense, Online Privacy, Security Evaluation">
+    <meta name="author" content="Masoom, Young Indians">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="audit-transfer.js"></script>
+<script>
+  window.onload = displayScores;
+</script>
+    
+    <title>Yi Digital Survey Audit</title>
+    <link rel="icon" type="image/x-icon" href="yi-logo.png">
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #1976D2;
+            --background-color: #f5f7fa;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --text-secondary: #666666;
+            --excellent-color: #4CAF50;
+            --good-color: #2196F3;
+            --moderate-color: #FFC107;
+            --poor-color: #FF9800;
+            --critical-color: #F44336;
+            --negligent-color: #9E9E9E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            flex: 1;
+            max-width: 800px;
+            margin: 60px auto 20px;
+            padding: 20px;
+        }
+
+        .score-card {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .score-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--excellent-color), var(--moderate-color), var(--critical-color));
+        }
+
+        h2 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .score-description, .assessment-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .score-ranges, .assessment-ranges {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .score-range, .assessment-range {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .excellent { background: rgba(76, 175, 80, 0.1); border-left: 4px solid var(--excellent-color); }
+        .good { background: rgba(33, 150, 243, 0.1); border-left: 4px solid var(--good-color); }
+        .moderate { background: rgba(255, 193, 7, 0.1); border-left: 4px solid var(--moderate-color); }
+        .poor { background: rgba(255, 152, 0, 0.1); border-left: 4px solid var(--poor-color); }
+        .critical { background: rgba(244, 67, 54, 0.1); border-left: 4px solid var(--critical-color); }
+        .negligent { background: rgba(158, 158, 158, 0.1); border-left: 4px solid var(--negligent-color); }
+
+        .points {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .description {
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .view-resources {
+            background-color: #2196F3;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: transparent;
+            margin: 20px auto;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            font-size: 0.9rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+
+        .view-resources:hover {
+            background-color: #004c8a;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: transparent;
+            margin: 20px auto;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            font-size: 0.9rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+
+        .back-button, .next-button, .home-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .back-button {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        .back-button:hover {
+            background-color: #e08600;
+            color: white;
+        }
+
+        .next-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .next-button:hover {
+            background-color: #3c8c3f;
+            color: white;
+        }
+
+        .home-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .home-button:hover {
+            background-color: #38813a;
+            color: white;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: transparent;
+            color: #ff8c00;
+            border: none;
+            border-radius: 3px;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #FF9800;
+            color: #ffffff;
+            z-index: 2000;
+            transition: left 0.3s ease;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .offcanvas-menu {
+            left: 0;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .footer {
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .score-card {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .score-description, .assessment-description {
+                font-size: 0.9rem;
+            }
+
+            .score-range, .assessment-range {
+                padding: 0.75rem;
+            }
+
+            .points {
+                font-size: 0.9rem;
+            }
+
+            .description {
+                font-size: 0.8rem;
+            }
+
+            .view-resources {
+                font-size: 0.8rem;
+                padding: 8px 15px;
+            }
+
+            .button-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .back-button, .next-button, .home-button {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+                margin: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                padding-top: 50px;
+            }
+
+            .score-card {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .score-description, .assessment-description {
+                font-size: 0.8rem;
+            }
+
+            .score-range, .assessment-range {
+                padding: 0.5rem;
+            }
+
+            .points {
+                font-size: 0.8rem;
+            }
+
+            .description {
+                font-size: 0.7rem;
+            }
+            
+        }
+
+
+
+
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff8f0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+    
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ff8c00;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title-section h1 {
+            font-size: 1.8rem;
+            color: #ff8c00;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .content-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #ff8c00;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            /* padding-left: 1.5rem; */
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e67e00;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c00;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 2rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            transform: translateX(10px);
+            color: #000000;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-buttons {
+            background-color: transparent;
+            color: transparent;
+           
+            border-color: transparent;
+            box-shadow: transparent ;
+        }
+
+        .score-range, .assessment-range {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .score-range:hover, .assessment-range:hover {
+        transform: translateX(10px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+   
+
+        
+    </style>
+</head>
+<body>
+
+
+    
+    <div class="background-animation" id="backgroundAnimation"></div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <span class="close-btn" id="closeMenu">&times;</span>
+        <a href="index.html">Home</a>
+        <!-- <a href="about.html">About</a> -->
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <div style="position: absolute; bottom: 56px; left: 2px; width: 100%; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>  
+
+    <div class="overlay" id="overlay"></div>
+
+    
+    <div class="container">
+        
+        <div id="section1" class="section active">
+            <div class="score-card">
+                <h2>Digital Safety Assessment and Recommendations</h2>
+                <p class="assessment-description">
+                    The overall digital safety assessment and recommendations are based on the total score:
+                </p>
+<!--Overall Score has to be mentioned here-->
+<div >
+                <ul class="assessment-ranges">
+                    <li class="assessment-range excellent">
+                        <div class="points">240-270 points: Excellent digital safety practices, keep up the great work!</div>
+                    </li>
+                    <li class="assessment-range good">
+                        <div class="points">180-239 points: Good digital safety, but continue improving in some areas.</div>
+                    </li>
+                    <li class="assessment-range moderate">
+                        <div class="points">120-179 points: Moderate digital safety, significant room for improvement.</div>
+                    </li>
+                    <li class="assessment-range poor">
+                        <div class="points">60-119 points: Poor digital safety, immediate action is required.</div>
+                    </li>
+                    <li class="assessment-range critical">
+                        <div class="points">0-59 points: Extremely poor digital safety, critical risk of cyber threats.</div>
+                    </li>
+                    <li class="assessment-range negligent">
+                        <div class="points">Negative points: Negligent digital safety practices, severe vulnerability to exploitation.</div>
+                    </li>
+                </ul>
+                <div class="button-container">
+                    <button class="back-buttons" ></button>
+                    <button class="next-button" onclick="showNextSection(1)">Next</button>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="section2" class="section">
+            <div class="score-card">
+                <h2>Digital Safety Audit Scoring Sheet:</h2>
+                <div class="score-ranges">
+                    <div class="score-range excellent">
+
+                        <!--Genral Safety Score has to be mentioned here -->
+                        <div class="points">General Safety (7 questions, 5 points each, total 35 points):</div>
+                        <div class="description">30-35 points: Excellent digital safety awareness and practices</div>
+                        <div class="description">20-29 points: Good digital safety, but room for improvement</div>
+                        <div class="description">10-19 points: Moderate digital safety, needs more attention</div>
+                        <div class="description">0-9 points: Poor digital safety, high risk of cyber threats</div>
+                        <div class="description">Negative points: Significant gaps in digital safety, immediate action required</div>
+                    </div>
+                    <div class="score-range good">
+                        <!--Password Management and Digital Identity Protection Score has to be mentioned here -->
+                        <div class="points">Password Management and Digital Identity Protection (7 questions, 5 points each, total 35 points):</div>
+                        <div class="description">30-35 points: Robust password management and identity protection</div>
+                        <div class="description">20-29 points: Reasonable password security, but some vulnerabilities</div>
+                        <div class="description">10-19 points: Weak password practices, high risk of identity-related crimes</div>
+                        <div class="description">0-9 points: Extremely poor password hygiene, urgent action needed</div>
+                        <div class="description">Negative points: Negligent password and identity management, critical risk</div>
+                    </div>
+                    <div class="score-range moderate">
+                        <!--Social Media Security Score has to be mentioned here -->
+                        <div class="points">Social Media Security (10 questions, 5 points each, total 50 points):</div>
+                        <div class="description">40-50 points: Excellent social media security and privacy</div>
+                        <div class="description">30-39 points: Good social media practices, but room for improvement</div>
+                        <div class="description">20-29 points: Moderate social media security, high exposure to risks</div>
+                        <div class="description">10-19 points: Poor social media security, vulnerable to threats</div>
+                        <div class="description">0-9 points: Extremely weak social media practices</div>
+                        <div class="description">Negative points: Reckless social media behavior, severe risk of exploitation</div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="back-button" onclick="showPreviousSection(2)">Back</button>
+                    <button class="next-button" onclick="showNextSection(2)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="section3" class="section">
+            <div class="score-card">
+                <h2>Digital Safety Audit Scoring Sheet (Continued):</h2>
+                <div class="score-ranges">
+                    <div class="score-range poor">
+                        <div class="points">Financial Digital Safety (7 questions, 5 points each, total 35 points):</div>
+                        <div class="description">30-35 points: Exceptional financial digital safety measures</div>
+                        <div class="description">20-29 points: Good financial digital safety, but some vulnerabilities</div>
+                        <div class="description">10-19 points: Moderate financial digital safety, high risk of financial crimes</div>
+                        <div class="description">0-9 points: Weak financial digital safety, urgent action needed</div>
+                        <div class="description">Negative points: Negligent financial digital practices, critical risk of fraud</div>
+                    </div>
+                    <div class="score-range critical">
+                        <div class="points">Phishing, Scams, and Cybercrime Awareness (4 questions, 5 points each, total 20 points):</div>
+                        <div class="description">16-20 points: Excellent awareness and ability to identify scams/cybercrimes</div>
+                        <div class="description">11-15 points: Good awareness, but room for improvement</div>
+                        <div class="description">6-10 points: Moderate awareness, susceptible to falling for scams</div>
+                        <div class="description">0-5 points: Poor awareness, high risk of becoming a victim of scams/cybercrimes</div>
+                        <div class="description">Negative points: Negligent approach to scams/cybercrimes, critical risk</div>
+                    </div>
+                    <div class="score-range negligent">
+                        <div class="points">Mobile Device and App Security (6 questions, 5 points each, total 30 points):</div>
+                        <div class="description">25-30 points: Robust mobile device and app security practices</div>
+                        <div class="description">18-24 points: Good mobile security, but some vulnerabilities</div>
+                        <div class="description">12-17 points: Moderate mobile security, high risk of mobile-based threats</div>
+                        <div class="description">6-11 points: Weak mobile security, urgent action needed</div>
+                        <div class="description">0-5 points: Extremely poor mobile security, critical risk of compromise</div>
+                        <div class="description">Negative points: Negligent mobile security, severe vulnerability to attacks</div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="back-button" onclick="showPreviousSection(3)">Back</button>
+                    <button class="next-button" onclick="showNextSection(3)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="section4" class="section">
+            <div class="score-card">
+                <h2>Digital Safety Audit Scoring Sheet (Continued):</h2>
+                <div class="score-ranges">
+                    <div class="score-range excellent">
+                        <div class="points">Mobile Device and App Security (6 questions, 5 points each, total 30 points):</div>
+                        <div class="description">25-30 points: Robust mobile device and app security practices</div>
+                        <div class="description">18-24 points: Good mobile security, but some vulnerabilities</div>
+                        <div class="description">12-17 points: Moderate mobile security, high risk of mobile-based threats</div>
+                        <div class="description">6-11 points: Weak mobile security, urgent action needed</div>
+                        <div class="description">0-5 points: Extremely poor mobile security, critical risk of compromise</div>
+                        <div class="description">Negative points: Negligent mobile security, severe vulnerability to attacks</div>
+                    </div>
+                    <div class="score-range good">
+                        <div class="points">Cyberbullying, Online Harassment, and Child Online Protection (5 questions, 5 points each, total 25 points):</div>
+                        <div class="description">21-25 points: Excellent awareness and ability to address online harassment/abuse</div>
+                        <div class="description">15-20 points: Good awareness, but room for improvement</div>
+                        <div class="description">10-14 points: Moderate awareness, susceptible to online harm</div>
+                        <div class="description">5-9 points: Poor awareness, high risk of online harassment/exploitation</div>
+                        <div class="description">0-4 points: Negligent approach to online safety, critical risk</div>
+                        <div class="description">Negative points: Extremely poor understanding of online safety, severe vulnerability</div>
+                    </div>
+                    <div class="score-range moderate">
+                        <div class="points">Online Gaming and Entertainment Safety (5 questions, 5 points each, total 25 points):</div>
+                        <div class="description">21-25 points: Robust safety measures for online gaming and entertainment</div>
+                        <div class="description">15-20 points: Good online gaming/entertainment safety practices</div>
+                        <div class="description">10-14 points: Moderate safety, high risk of exposure to online threats</div>
+                        <div class="description">5-9 points: Weak online gaming/entertainment safety, urgent action needed</div>
+                        <div class="description">0-4 points: Extremely poor safety, critical risk of online harm</div>
+                        <div class="description">Negative points: Negligent approach to online gaming/entertainment safety, severe vulnerability</div>
+                    </div>
+                    <div class="score-range poor">
+                        <div class="points">Digital Literacy, Fact-Checking, and Misinformation Awareness (3 questions, 5 points each, total 15 points):</div>
+                        <div class="description">13-15 points: Excellent digital literacy and ability to identify misinformation</div>
+                        <div class="description">9-12 points: Good digital literacy, but room for improvement</div>
+                        <div class="description">5-8 points: Moderate digital literacy, susceptible to falling for misinformation</div>
+                        <div class="description">1-4 points: Poor digital literacy, high risk of being misled by false information</div>
+                        <div class="description">0 points: Negligent approach to digital literacy and fact-checking, critical risk</div>
+                        <div class="description">Negative points: Extremely poor digital literacy, severe vulnerability to misinformation</div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="back-button" onclick="showPreviousSection(4)">Back</button>
+                    <button class="next-button" onclick="showNextSection(4)">Next</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="section5" class="section">
+            <div class="score-card">
+                <h2>Digital Safety Audit Scoring Sheet (Continued):</h2>
+                <div class="recommendations">
+                    <h3>How to Improve Your Scores:</h3>
+                    <br>
+                    <div class="score-range excellent">
+
+
+                        <div class="points">General Safety:</div>
+                        <div class="description">To maximize digital safety, use strong passwords/PINs, biometric locks, limit social media use, stay updated on scams, always use HTTPS, restrict Bluetooth, and securely erase data before disposing devices. Be aware of official cybercrime reporting channels.</div>
+                    </div>
+                    <div class="score-range good">
+                        <div class="points">Password Management and Digital Identity Protection:</div>
+                        <div class="description">To maximize digital safety, use unique, complex passwords, change them frequently, leverage password managers, and enable two-factor authentication wherever available. Be highly protective of your Aadhaar number and only share it when absolutely necessary.</div>
+                    </div>
+                    <div class="score-range moderate">
+                        <div class="points">Social Media Security:</div>
+                        <div class="description">To maximize digital safety on social media, regularly review and update privacy settings, be cautious about accepting friend/connection requests from strangers, limit sharing of personal information, avoid location tagging, manage linked third-party apps, use strong passwords, access accounts only on trusted devices, and verify information before sharing.</div>
+                    </div>
+                    <div class="score-range poor">
+                        <div class="points">Financial Digital Safety:</div>
+                        <div class="description">To maximize digital financial safety, regularly review online statements, use strong PINs/biometrics for payment apps, update account passwords frequently, be extremely cautious about sharing financial information, choose secure payment methods for e-commerce, and thoroughly verify website authenticity before providing sensitive data.</div>
+                    </div>
+                    <div class="score-range critical">
+                        <div class="points">Phishing, Scams, and Cybercrime Awareness:</div>
+                        <div class="description">To maximize safety, be highly vigilant in identifying phishing attempts, never click on suspicious links or share sensitive information over unsolicited calls/messages, and always verify requests for money or personal data from known contacts. Proactively report any suspected scams to relevant authorities.</div>
+                    </div>
+                    <div class="score-range excellent">
+                        <div class="points">Mobile Device and App Security:</div>
+                        <div class="description">To maximize mobile security, only download apps from official stores, carefully review app permissions, use reputable antivirus/security software, avoid untrusted public WiFi connections, and promptly delete unused apps after clearing their data and permissions.</div>
+                    </div>
+                    <div class="score-range good">
+                        <div class="points">Cyberbullying, Online Harassment, and Child Online Protection:</div>
+                        <div class="description">To maximize safety, be aware of cyberbullying, harassment, and online exploitation, and know how to respond. If you experience or witness such issues, report them to the platforms, trusted authorities, and seek help. Educate yourself and others on recognizing and addressing these online threats.</div>
+                    </div>
+                    <div class="score-range moderate">
+                        <div class="points">Online Gaming and Entertainment Safety:</div>
+                        <div class="description">To maximize safety, always check age ratings before engaging with online content and games, communicate cautiously with strangers in gaming communities, be aware of potential cyberbullying, verify the legitimacy of gaming/entertainment platforms before use.</div>
+                    </div>
+                    <div class="score-range poor">
+                        <div class="points">Digital Literacy, Fact-Checking, and Misinformation Awareness:</div>
+                        <div class="description">To maximize digital safety, be well-versed in identifying fake news and misinformation. Rely on reputable, fact-checking sources rather than social media shares or unverified claims when validating information. Exercise caution before spreading content that seems questionable or sensational.</div>
+                    </div>
+                    
+                    <button class="view-resources" onclick="window.location.href='resources.html'">View Resources</button>
+                </div>
+                
+                <div class="button-container">
+                    <button class="back-button" onclick="showPreviousSection(5)">Back</button>
+                    <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Masoom –    Young Indians. All rights reserved.
+    </footer>
+
+    <script>
+        
+
+// Intersection Observer for animation triggers
+const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('.objective-card, .stats h2, .stats p').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Background animation
+        function createBubbles() {
+            const backgroundAnimation = document.getElementById('backgroundAnimation');
+            const bubbleCount = 20;
+
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+                backgroundAnimation.appendChild(bubble);
+            }
+        }
+
+        createBubbles();
+        displayScores()
+
+
+        function showNextSection(currentSection) {
+            document.getElementById(`section${currentSection}`).classList.remove('active');
+            document.getElementById(`section${currentSection + 1}`).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showPreviousSection(currentSection) {
+            document.getElementById(`section${currentSection}`).classList.remove('active');
+            document.getElementById(`section${currentSection - 1}`).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+
+        const menuToggle = document.getElementById('menuToggle');
+        const closeMenu = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+        const body = document.body;
+
+        function openMenu() {
+            body.classList.add('offcanvas-open');
+        }
+
+        function closeMenuFunc() {
+            body.classList.remove('offcanvas-open');
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        overlay.addEventListener('click', closeMenuFunc);
+
+        closeMenuBtn.addEventListener('click', toggleMenu);
+
+
+    </script>
+
+
+    
+    
+</body>
+</html>

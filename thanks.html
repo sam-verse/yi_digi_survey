@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="icon" type="image/x-icon" href="yi-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            background-color: #FAEDE9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px 0;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            border-radius: 1px;
+        }
+
+        .content h1 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .checkmark {
+            font-size: 2em;
+            color: #fff;
+            background-color: #38C172;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .content p {
+            font-size: 0.9em;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .resource-button {
+            display: block;
+            padding: 12px;
+            background-color: #c9c7c7;
+            font-weight: 500;
+            color: #000000;
+            border: none;
+            
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 10px;
+        }
+
+        .learn-more {
+            display: block;
+            color: #F88F38;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .score-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #F88F38;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .content h1 {
+                font-size: 1.3em;
+            }
+
+            .checkmark {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8em;
+            }
+
+            .resource-button, .score-button {
+                font-size: 0.9em;
+                padding: 12px;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="content">
+            <h1 style="text-align: center;">Thank You for Your Participation!</h1>
+            <div class="checkmark">
+                <span>&#10004;</span>
+            </div>
+            <p>We greatly appreciate you taking the time to complete our survey. Your feedback is incredibly valuable and will help us improve and make a meaningful impact. If you have any further thoughts or suggestions, feel free to reach out to us. Stay connected and thank you for contributing!</p>
+           <br><br>
+            <a href="abrahamsamuel.netlify.app" class="learn-more">More about YUVA</a><br>
+            <button class="score-button">View Resources</button>
+        </div>
+        <footer>
+            <p>An initiative of Masoom by Young Indians</p>
+        </footer>
+    </div>
+    <script>
+        // Placeholder JavaScript, add any interactivity if needed here.
+        document.querySelector('.resource-button').addEventListener('click', function() {
+            alert('Resources accessed!');
+        });
+
+        document.querySelector('.score-button').addEventListener('click', function() {
+            alert('Viewing score!');
+        });
+    </script>
+</body>
+</html>

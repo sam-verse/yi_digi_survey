@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Digital Safety Audit - Assess and Strengthen Your Online Security">
+    <meta name="description" content="The Digital Safety Audit helps assess your online security, identifying vulnerabilities cybercriminals could exploit. Discover essential steps to fortify your digital defenses with this initiative by Masoom, Young Indians.">
+    <meta name="keywords" content="Digital Safety Audit, Online Security Assessment, Cybersecurity Audit, Masoom Young Indians, Digital Vulnerability Check, Cyber Defense, Online Privacy, Security Evaluation">
+    <meta name="author" content="Masoom, Young Indians">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>About- Yi Digital Survey Audit</title>
+    <link rel="icon" type="image/x-icon" href="yi-logo.png">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .initiative-text {
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
+            font-style: italic;
+            color: #000000;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #fff8f0;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .menu-btn {
+            background: none;
+            color: #ff8c1a;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Off-canvas Menu */
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: #ff8c1a;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            /* padding: 2rem; */
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .close-menu {
+            color: white;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .close-menu:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-items {
+            list-style-type: none;
+            padding-top: 2rem;
+        }
+
+        .menu-items li {
+            margin-bottom: 1rem;
+        }
+
+        .menu-items a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .menu-items a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff8c1a, #ff6600);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.2"/></svg>') repeat;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            from { transform: translateX(0) translateY(0); }
+            to { transform: translateX(-50%) translateY(-50%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(45deg, #0a7229, #19d02c);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .stats p {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* Objectives Section */
+        .objectives {
+            padding: 4rem 2rem;
+            background: #fff8f0;
+        }
+
+        .objectives h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            font-size: 2rem;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .objective-card {
+            background: #ff8c1a;
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.5s ease-out;
+            animation-delay: calc(var(--delay) * 0.2s);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Description Section */
+        .description {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #333;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Background Animation */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats p {
+                font-size: 1.2rem;
+            }
+
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .description {
+                padding: 2rem;
+            }
+        }
+    </style>
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .start-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background: #ff3c00;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .start-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+        }
+
+
+
+
+        body {
+            background-color: #fff8f0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background:transparent;
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ff8c00;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title-section h1 {
+            font-size: 1.8rem;
+            color: #ff8c00;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .content-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #ff8c00;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            /* padding-left: 1.5rem; */
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e67e00;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c00;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 2rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .content-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation" id="backgroundAnimation"></div>
+
+    <nav class="navbar">
+        <button class="menu-btn" id="openMenu">☰</button>
+        <h1 style="text-align: center;">Yi Digital Survey Audit</h1>
+        <img src="yi-logo.png" alt="Yi Logo" class="logo">
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <button class="close-menu" id="closeMenu">&times;</button>
+        <ul class="menu-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resources.html">resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            
+        </ul>
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Harnessing India's Massive Youth Power</h1>
+        </div>
+    </section>
+
+    <section class="stats" id="stats">
+        <h2>YUVA NOW HAS</h2>
+        <p>1 LAKH+ MEMBERS</p>
+        <p>FROM 140 INSTITUTES</p>
+    </section>
+
+    <section class="objectives" id="objectives">
+        <h2>YUVA OBJECTIVES</h2>
+        <div class="objectives-grid">
+            <div class="objective-card" style="--delay: 1">
+                <h3>Enabling Youth Leadership</h3>
+            </div>
+            <div class="objective-card" style="--delay: 2">
+                <h3>Shaping Responsible Youth</h3>
+            </div>
+            <div class="objective-card" style="--delay: 3">
+                <h3>Youth Skill Development & Training</h3>
+            </div>
+            <div class="objective-card" style="--delay: 4">
+                <h3>Giving Voice To Young India</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="description" id="description">
+        <p>Young Indians (Yi) is a movement for Indian youth to Converge, Lead, Co-Create and influence India's Future. As an integral part of the Confederation of Indian Industry (CII), Yi's mission to strengthen the future of India gives a stage and voice to the country's next generation of changemakers. It aims to instill in young minds the power of leadership, enhance the youth entrepreneurial ecosystem and create youth-led changes to build the nation.</p>
+    </section>
+
+    <button class="start-button" onclick="startQuiz()">START</button>
+
+    <footer class="footer">
+        &copy; 2024 Masoom – Young Indians. All rights reserved.
+    </footer>
+
+    <script>        
+
+function startQuiz() {
+            window.location.href = 'form.html';
+        }
+
+
+        // Intersection Observer for animation triggers
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('.objective-card, .stats h2, .stats p').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Background animation
+        function createBubbles() {
+            const backgroundAnimation = document.getElementById('backgroundAnimation');
+            const bubbleCount = 20;
+
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+                backgroundAnimation.appendChild(bubble);
+            }
+        }
+
+        createBubbles();
+
+        // Off-canvas menu functionality
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            offcanvasMenu.classList.toggle('active');
+            overlay.style.display = offcanvasMenu.classList.contains('active') ? 'block' : 'none';
+        }
+
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Smooth scrolling for menu items
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleMenu();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Indians (Yi)</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .menu-btn {
+            background: none;
+            color: #ff8c1a;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Off-canvas Menu */
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: #ff8c1a;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 2rem;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .close-menu {
+            color: white;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .menu-items {
+            list-style-type: none;
+            padding-top: 2rem;
+        }
+
+        .menu-items li {
+            margin-bottom: 1rem;
+        }
+
+        .menu-items a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            color: #ffd700;
+        }
+        .menu-items a:hover {
+            color: #000000;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff8c1a, #ff6600);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.2"/></svg>') repeat;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            from { transform: translateX(0) translateY(0); }
+            to { transform: translateX(-50%) translateY(-50%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(45deg, #0a7229, #19d02c);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .stats p {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* Objectives Section */
+        .objectives {
+            padding: 4rem 2rem;
+            background: #f5f5f5;
+        }
+
+        .objectives h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            font-size: 2rem;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .objective-card {
+            background: #ff8c1a;
+            color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            animation: fadeInUp 0.5s ease-out;
+            animation-delay: calc(var(--delay) * 0.2s);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Description Section */
+        .description {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats p {
+                font-size: 1.2rem;
+            }
+
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        form {
+            background: #fcf3e3;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        form:hover {
+            background-color: #f9ebd5;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer {
+            margin-top: auto;
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:hover, select:hover {
+            border-color: #ff8c00;
+            box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 12px;
+            padding-right: 2rem;
+        }
+
+        button {
+            background-color: transparent;
+    color: #ff8c00;
+    /* padding: 0.75rem 1.5rem; */
+    /* border: none; */
+    /* border-radius: 3px; */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 50px;
+    height: 50px;
+        }
+
+        /* button:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        } */
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            z-index: 1000;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        
+        .menu-btn {
+            background: none;
+            color: #ff8c1a;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #ff8c1a;
+            margin: 5px 0;
+            border-radius: 1px;
+            transition: 0.3s;
+        }
+
+         /* Off-canvas menu styles */
+         .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c1a;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="menu-btn" id="openMenu">☰</button>
+        <h1>Yi Digital Survey Audit</h1>
+        <img src="yi-logo.png" alt="Yi Logo" class="logo">
+    </nav>
+    <div class="header">
+        <button class="menu-toggle" id="openMenu">☰</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <div style="position: absolute; bottom: 10px; left: 2px; width: 100%; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Harnessing India's Massive Youth Power</h1>
+        </div>
+    </section>
+
+    <section class="stats" id="stats">
+        <h2>YUVA NOW HAS</h2>
+        <p>1 LAKH+ MEMBERS</p>
+        <p>FROM 140 INSTITUTES</p>
+    </section>
+
+    <section class="objectives" id="objectives">
+        <h2>YUVA OBJECTIVES</h2>
+        <div class="objectives-grid">
+            <div class="objective-card" style="--delay: 1">
+                <h3>Enabling Youth Leadership</h3>
+            </div>
+            <div class="objective-card" style="--delay: 2">
+                <h3>Shaping Responsible Youth</h3>
+            </div>
+            <div class="objective-card" style="--delay: 3">
+                <h3>Youth Skill Development & Training</h3>
+            </div>
+            <div class="objective-card" style="--delay: 4">
+                <h3>Giving Voice To Young India</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="description" id="description">
+        <p>Young Indians ( Yi ) is a movement for Indian youth to Converge, Lead, Co-Create and influence India's Future. As an integral part of the Confederation of Indian Industry (CII), Yi's mission to strengthen the future of India gives a stage and voice to the country's next generation of changemakers. It aims to instill in young minds the power of leadership, enhance the youth entrepreneurial ecosystem and create youth-led changes to build the nation.</p>
+    </section>
+    <footer class="footer">
+        &copy; 2024 Masoom – Young Indians. All rights reserved.
+    </footer>
+    <script>
+        // Intersection Observer for animation triggers
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('.objective-card, .stats h2, .stats p').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Particle animation for hero section
+        const hero = document.querySelector('.hero');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: rgba(255,255,255,0.2);
+                border-radius: 50%;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: float ${5 + Math.random() * 10}s linear infinite;
+            `;
+            hero.appendChild(particle);
+        }
+
+        // Add animation keyframes dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translate(0, 0);
+                }
+                100% {
+                    transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Off-canvas menu functionality
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        openMenuBtn.addEventListener('click', () => {
+            offcanvasMenu.classList.add('active');
+            overlay.style.display = 'block';
+        });
+
+        closeMenuBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        function closeMenu() {
+            offcanvasMenu.classList.remove('active');
+            overlay.style.display = 'none';
+        }
+
+        // Smooth scrolling for menu items
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeMenu();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> -->

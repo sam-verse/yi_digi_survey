@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Digital Safety Audit - Assess and Strengthen Your Online Security">
+    <meta name="description" content="The Digital Safety Audit helps assess your online security, identifying vulnerabilities cybercriminals could exploit. Discover essential steps to fortify your digital defenses with this initiative by Masoom, Young Indians.">
+    <meta name="keywords" content="Digital Safety Audit, Online Security Assessment, Cybersecurity Audit, Masoom Young Indians, Digital Vulnerability Check, Cyber Defense, Online Privacy, Security Evaluation">
+    <meta name="author" content="Masoom, Young Indians">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Yi Digital Survey Audit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing  : border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+
+        .initiative-text {
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
+            font-style: italic;
+            color: #000000;
+        }
+
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #backgroundCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            color: #ff5722;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            background-color: rgba(255, 140, 0, 0.8);
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:hover, select:hover {
+            border-color: #ff8c00;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #ff8c00;
+            box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 12px;
+            padding-right: 2rem;
+        }
+
+        button {
+            background-color: #ff5722;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            z-index: 1000;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        .menu-btn {
+            background: none;
+            color: #ff8c1a;
+            border: none;
+            font-size: 1.7rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            padding-left: 0px;
+            padding-top: 10px;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #ff8c1a;
+            margin: 5px 0;
+            border-radius: 1px;
+            transition: 0.3s;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: rgba(255, 140, 26, 0.9);
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            /* right: 20px; */
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+ /* Background Animation */
+ .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            form {
+                padding: 1.5rem;
+            }
+
+           
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff8f0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+
+
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #ff8c00;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            /* padding-left: 1.5rem; */
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e67e00;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c00;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 2rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .content-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animation" id="backgroundAnimation"></div>
+    <canvas id="backgroundCanvas"></canvas>
+
+
+
+    
+   
+        <div class="header">
+            <button class="menu-toggle" id="openMenu" aria-label="Open menu" style=" color: #ff8c00;   font-size: 30px;    background-color: transparent; width: 100px; padding-top: 30px;  ">☰</button>
+        </div>
+    
+        <div class="overlay" id="overlay"></div>
+    
+        <div class="offcanvas-menu" id="offcanvasMenu">
+            <button class="close-btn" id="closeMenu" aria-label="Close menu" style="padding-left: 50px;">&times;</button>
+            <a href="index.html">Home</a>
+            <!-- <a href="about.html">About</a> -->
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+            <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+        </div>
+   
+        <div class="header-content">
+            <div class="title-section">
+                <h1>Digital Safety Audit</h1>
+                <p class="subtitle">Ensuring your online security</p>
+            </div>
+        </div>
+        
+
+
+    <div class="container">
+        
+
+
+
+        
+
+        <form id="detailsForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select id="age" name="age" required>
+                    <option value="">Select your age</option>
+                    <option value="12-18">12-18</option>
+                    <option value="19-24">19-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-44">35-44</option>
+                    <option value="45-54">45-54</option>
+                    <option value="55-64">55-64</option>
+                    <option value="65+">65 and above</option>
+                </select>
+                <div class="error" id="ageError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+                <div class="error" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Highest Level of Education:</label>
+                <select id="education" name="education" required>
+                    <option value="">Select your education level</option>
+                    <option value="High school or equivalent">High school or equivalent</option>
+                    <option value="bachelors">Bachelor's Degree</option>
+                    <option value="masters">Master's Degree</option>
+                    <option value="doctorate">Doctoral degree</option>
+                    <option value="professional-degree">Professional degree (e.g. MD, JD)</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error" id="educationError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="">Select your occupation</option>
+                    <option value="business">Business</option>
+                    <option value="student">Student</option>
+                    <option value="employed_fulltime">Employed (Full-time)</option>
+                    <option value="employed_parttime">Employed (Part-time)</option>
+                    <option value="self_employed">Self-employed</option>
+                    <option value="retired">Retired</option>
+                    <option value="homemaker">Homemaker</option>
+                    <option value="unemployed">Unemployed</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error" id="occupationError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select id="state" name="state" required>
+                    <option value="">Select your state</option>
+                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                    <option value="assam">Assam</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="chhattisgarh">Chhattisgarh</option>
+                    <option value="goa">Goa</option>
+                    <option value="gujarat">Gujarat</option>
+                    <option value="haryana">Haryana</option>
+                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="manipur">Manipur</option>
+                    <option value="meghalaya">Meghalaya</option>
+                    <option value="mizoram">Mizoram</option>
+                    <option value="nagaland">Nagaland</option>
+                    <option value="odisha">Odisha</option>
+                    <option value="punjab">Punjab</option>
+                    <option value="rajasthan">Rajasthan</option>
+                    <option value="sikkim">Sikkim</option>
+                    <option value="tamil-nadu">Tamil Nadu</option>
+                    <option value="telangana">Telangana</option>
+                    <option value="tripura">Tripura</option>
+                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                    <option value="uttarakhand">Uttarakhand</option>
+                    <option value="west-bengal">West Bengal</option>
+                </select>
+                <div class="error" id="stateError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="income">Annual Personal Income:</label>
+                <select id="income" name="income" required>
+                    <option value="">Select your income range</option>
+                    <option value="less_than_200000">Less than ₹2,00,000</option>
+                    <option value="200000-499999">₹2,00,000 - ₹4,99,999</option>
+                    <option value="500000-999999">₹5,00,000 - ₹9,99,999</option>
+                    <option value="1000000-1999999">₹10,00,000 - ₹19,99,999</option>
+                    <option value="2000000_and_above">₹20,00,000 and above</option>
+                    <option value="prefer_not_to_say">Prefer not to say</option>
+                </select>
+                <div class="error" id="incomeError"></div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Masoom – Young Indians. All rights reserved.
+    </footer>   
+
+    <script>
+
+// Intersection Observer for animation triggers
+const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('.objective-card, .stats h2, .stats p').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Background animation
+        function createBubbles() {
+            const backgroundAnimation = document.getElementById('backgroundAnimation');
+            const bubbleCount = 20;
+
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+                backgroundAnimation.appendChild(bubble);
+            }
+        }
+
+        createBubbles();
+
+
+
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            document.body.classList.toggle('offcanvas-open');
+            offcanvasMenu.classList.toggle('active');
+        }
+
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        function submitFormData() {
+            const form = document.getElementById('detailsForm');
+            const formData = new FormData(form);
+
+            // Convert FormData to JSON
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            // Google Apps Script Web App URL
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbz7Wq4txbZ0t-To8fMjdOzFrfGcQI7a8gvC9lmEBCfpO9s3gWz80zRfqfrAKw7r0yYS/exec';
+
+            // Send data to Google Apps Script
+            fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors', // This is important for cross-origin requests
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonData),
+            })
+            .then(() => {
+                // Since we're using 'no-cors', we can't access the response
+                // So we'll just assume it was successful
+                alert('Form submitted successfully!');
+                form.reset();
+                
+                // Redirect to questions.html
+                window.location.href = 'questions.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        }
+
+        function validateForm() {
+            let isValid = true;
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const age = document.getElementById('age');
+            const ageError = document.getElementById('ageError');
+            const gender = document.getElementById('gender');
+            const genderError = document.getElementById('genderError');
+            const education = document.getElementById('education');
+            const educationError = document.getElementById('educationError');
+            const occupation = document.getElementById('occupation');
+            const occupationError = document.getElementById('occupationError');
+            const state = document.getElementById('state');
+            const stateError = document.getElementById('stateError');
+            const income = document.getElementById('income');
+            const incomeError = document.getElementById('incomeError');
+
+            // Email validation
+            if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            // Dropdown validations
+            if (age.value === '') {
+                ageError.textContent = 'Please select your age range.';
+                isValid = false;
+            } else {
+                ageError.textContent = '';
+            }
+
+            if (gender.value === '') {
+                genderError.textContent = 'Please select your gender.';
+                isValid = false;
+            } else {
+                genderError.textContent = '';
+            }
+
+            if (education.value === '') {
+                educationError.textContent = 'Please select your education level.';
+                isValid = false;
+            } else {
+                educationError.textContent = '';
+            }
+
+            if (occupation.value === '') {
+                occupationError.textContent = 'Please select your occupation.';
+                isValid = false;
+            } else {
+                occupationError.textContent = '';
+            }
+
+            if (state.value === '') {
+                stateError.textContent = 'Please select your state.';
+                isValid = false;
+            } else {
+                stateError.textContent = '';
+            }
+
+            if (income.value === '') {
+                incomeError.textContent = 'Please select your income range.';
+                isValid = false;
+            } else {
+                incomeError.textContent = '';
+            }
+
+            return isValid;
+        }
+
+        document.getElementById('detailsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (validateForm()) {
+                submitFormData();
+            }
+        });
+
+        // Background animation
+           </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Safety Audit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        form {
+            background: #fcf3e3;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        form:hover {
+            background-color: #f9ebd5;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:hover, select:hover {
+            border-color: #ff8c00;
+            box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 12px;
+            padding-right: 2rem;
+        }
+
+        button {
+            background-color: #ff5722;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 150px;
+            height: auto;
+        }
+
+        button:hover {
+            background-color: #d32f2f;
+            transform: scale(1.05);
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            z-index: 1000;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        .menu-btn {
+            background: none;
+            color: #ff8c1a;
+            border: none;
+            font-size: 1.7rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            padding-left: 0px;
+            padding-top: 10px;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #ff8c1a;
+            margin: 5px 0;
+            border-radius: 1px;
+            transition: 0.3s;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c1a;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="menu-btn" id="openMenu">☰</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <div style="position: absolute; bottom: 10px; left: 2px; width: 100%; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>
+
+    <div class="container">
+        <form id="detailsForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select id="age" name="age" required>
+                    <option value="">Select your age</option>
+                    <option value="12-18">12-18</option>
+                    <option value="19-24">19-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-44">35-44</option>
+                    <option value="45-54">45-54</option>
+                    <option value="55-64">55-64</option>
+                    <option value="65+">65 and above</option>
+                </select>
+                <div class="error" id="ageError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+                <div class="error" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Highest Level of Education:</label>
+                <select id="education" name="education" required>
+                    <option value="">Select your education level</option>
+                    <option value="High school or equivalent">High school or equivalent</option>
+                    <option value="bachelors">Bachelor's Degree</option>
+                    <option value="masters">Master's Degree</option>
+                    <option value="doctorate">Doctoral degree</option>
+                    <option value="professional-degree">Professional degree (e.g. MD, JD)</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error" id="educationError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="">Select your occupation</option>
+                    <option value="student">Student</option>
+                    <option value="employed_fulltime">Employed (Full-time)</option>
+                    <option value="employed_parttime">Employed (Part-time)</option>
+                    <option value="self_employed">Self-employed</option>
+                    <option value="retired">Retired</option>
+                    <option value="homemaker">Homemaker</option>
+                    <option value="unemployed">Unemployed</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error" id="occupationError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select id="state" name="state" required>
+                    <option value="">Select your state</option>
+                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                    <option value="assam">Assam</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="chhattisgarh">Chhattisgarh</option>
+                    <option value="goa">Goa</option>
+                    <option value="gujarat">Gujarat</option>
+                    <option value="haryana">Haryana</option>
+                    <option value="himachal-pradesh">Himachal Pradesh</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="madhya-pradesh">Madhya Pradesh</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="manipur">Manipur</option>
+                    <option value="meghalaya">Meghalaya</option>
+                    <option value="mizoram">Mizoram</option>
+                    <option value="nagaland">Nagaland</option>
+                    <option value="odisha">Odisha</option>
+                    <option value="punjab">Punjab</option>
+                    <option value="rajasthan">Rajasthan</option>
+                    <option value="sikkim">Sikkim</option>
+                    <option value="tamil-nadu">Tamil Nadu</option>
+                    <option value="telangana">Telangana</option>
+                    <option value="tripura">Tripura</option>
+                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                    <option value="uttarakhand">Uttarakhand</option>
+                    <option value="west-bengal">West Bengal</option>
+                </select>
+                <div class="error" id="stateError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="income">Annual Personal Income:</label>
+                <select id="income" name="income" required>
+                    <option value="">Select your income range</option>
+                    <option value="less_than_200000">Less than ₹2,00,000</option>
+                    <option value="200000-499999">₹2,00,000 - ₹4,99,999</option>
+                    <option value="500000-999999">₹5,00,000 - ₹9,99,999</option>
+                    <option value="1000000-1999999">₹10,00,000 - ₹19,99,999</option>
+                    <option value="2000000_and_above">₹20,00,000 and above</option>
+                    <option value="prefer_not_to_say">Prefer not to say</option>
+                </select>
+                <div class="error" id="incomeError"></div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Masoom – Young Indians. All rights reserved.
+    </footer>
+
+    <script>
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            document.body.classList.toggle('offcanvas-open');
+            offcanvasMenu.classList.toggle('active');
+        }
+
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        function submitFormData() {
+            const form = document.getElementById('detailsForm');
+            const formData = new FormData(form);
+
+            // Convert FormData to JSON
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            // Google Apps Script Web App URL
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbz7Wq4txbZ0t-To8fMjdOzFrfGcQI7a8gvC9lmEBCfpO9s3gWz80zRfqfrAKw7r0yYS/exec';
+
+            // Send data to Google Apps Script
+            fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors', // This is important for cross-origin requests
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonData),
+            })
+            .then(() => {
+                // Since we're using 'no-cors', we can't access the response
+                // So we'll just assume it was successful
+                alert('Form submitted successfully!');
+                form.reset();
+                
+                // Redirect to questions.html
+                window.location.href = 'questions.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        }
+
+        function validateForm() {
+            let isValid = true;
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const age = document.getElementById('age');
+            const ageError = document.getElementById('ageError');
+            const gender = document.getElementById('gender');
+            const genderError = document.getElementById('genderError');
+            const education = document.getElementById('education');
+            const educationError = document.getElementById('educationError');
+            const occupation = document.getElementById('occupation');
+            const occupationError = document.getElementById('occupationError');
+            const state = document.getElementById('state');
+            const stateError = document.getElementById('stateError');
+            const income = document.getElementById('income');
+            const incomeError = document.getElementById('incomeError');
+
+            // Email validation
+            if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            // Dropdown validations
+            if (age.value === '') {
+                ageError.textContent = 'Please select your age range.';
+                isValid = false;
+            } else {
+                ageError.textContent = '';
+            }
+
+            if (gender.value === '') {
+                genderError.textContent = 'Please select your gender.';
+                isValid = false;
+            } else {
+                genderError.textContent = '';
+            }
+
+            if (education.value === '') {
+                educationError.textContent = 'Please select your education level.';
+                isValid = false;
+            } else {
+                educationError.textContent = '';
+            }
+
+            if (occupation.value === '') {
+                occupationError.textContent = 'Please select your occupation.';
+                isValid = false;
+            } else {
+                occupationError.textContent = '';
+            }
+
+            if (state.value === '') {
+                stateError.textContent = 'Please select your state.';
+                isValid = false;
+            } else {
+                stateError.textContent = '';
+            }
+
+            if (income.value === '') {
+                incomeError.textContent = 'Please select your income range.';
+                isValid = false;
+            } else {
+                incomeError.textContent = '';
+            }
+
+            return isValid;
+        }
+
+        document.getElementById('detailsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (validateForm()) {
+                submitFormData();
+            }
+        });
+    </script>
+</body>
+</html> -->

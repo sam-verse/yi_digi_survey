@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Digital Safety Audit - Assess and Strengthen Your Online Security">
+    <meta name="description" content="The Digital Safety Audit helps assess your online security, identifying vulnerabilities cybercriminals could exploit. Discover essential steps to fortify your digital defenses with this initiative by Masoom, Young Indians.">
+    <meta name="keywords" content="Digital Safety Audit, Online Security Assessment, Cybersecurity Audit, Masoom Young Indians, Digital Vulnerability Check, Cyber Defense, Online Privacy, Security Evaluation">
+    <meta name="author" content="Masoom, Young Indians">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> Contact us - Yi Digital Survey Audit</title>
+    <link rel="icon" type="image/x-icon" href="yi-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .initiative-text {
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
+            font-style: italic;
+            color: #000000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        .header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            text-align: left;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 60px;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #ff8c00;
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 80px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin: 20px auto;
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #ff8c00;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff8c00;
+            box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .footer {
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .error {
+            color: #ff0000;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c1a;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 40px 20px;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .offcanvas-menu .close-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .submit-btn {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #e67e00;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                padding: 1.5rem;
+            }
+
+            .main-content {
+                padding: 70px 10px 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation" id="backgroundAnimation"></div>
+
+    <div class="header">
+        <button class="menu-toggle" id="openMenu" aria-label="Open menu">☰</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <button class="close-btn" id="closeMenu" aria-label="Close menu">&times;</button>
+        <a href="index.html">Home</a>
+        <!-- <a href="about.html">About</a> -->
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <div class="error" id="firstNameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <div class="error" id="lastNameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <div class="error" id="phoneError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <div class="error" id="messageError"></div>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <div class="footer">
+        &copy; 2024 Masoom – Young Indians. All rights reserved.
+    </div>
+
+    <script>
+        // Background animation
+        function createBubbles() {
+            const backgroundAnimation = document.getElementById('backgroundAnimation');
+            const bubbleCount = 20;
+
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+                backgroundAnimation.appendChild(bubble);
+            }
+        }
+
+        createBubbles();
+
+        // Menu functionality
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            document.body.classList.toggle('offcanvas-open');
+            offcanvasMenu.classList.toggle('active');
+        }
+
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Form validation and submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+
+                fetch('https://script.google.com/macros/s/AKfycby4G6w30OdpWK3G4vwLPU2UT4200FRxB504PLzUFdWzQF4VFirK93dn9-3BBsw7zTLtng/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    cache: 'no-cache',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(() => {
+                    alert("Thank you for contacting us!");
+                    document.getElementById("contactForm").reset();
+                })
+                .catch(error => console.error("Error!", error.message));
+            }
+        });
+
+        function validateForm() {
+            let isValid = true;
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const message = document.getElementById('message');
+
+            // Reset error messages
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+            // Validate First Name
+            if (firstName.value.trim() === '') {
+                document.getElementById('firstNameError').textContent = 'First Name is required';
+                isValid = false;
+            }
+
+            // Validate Last Name
+            if (lastName.value.trim() === '') {
+                document.getElementById('lastNameError').textContent = 'Last Name is required';
+                isValid = false;
+            }
+
+            // Validate Email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+
+            // Validate Phone
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone.value)) {
+                document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit phone number';
+                isValid = false;
+            }
+
+            // Validate Message
+            if (message.value.trim() === '') {
+                document.getElementById('messageError').textContent = 'Message is required';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

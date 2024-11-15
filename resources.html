@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="Digital Safety Audit - Assess and Strengthen Your Online Security">
+<meta name="description" content="The Digital Safety Audit helps assess your online security, identifying vulnerabilities cybercriminals could exploit. Discover essential steps to fortify your digital defenses with this initiative by Masoom, Young Indians.">
+<meta name="keywords" content="Digital Safety Audit, Online Security Assessment, Cybersecurity Audit, Masoom Young Indians, Digital Vulnerability Check, Cyber Defense, Online Privacy, Security Evaluation">
+<meta name="author" content="Masoom, Young Indians">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resources - Yi Digital Survey Audit</title>
+    <link rel="icon" type="image/x-icon" href="yi-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .initiative-text {
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
+            font-style: italic;
+            color: #000000;
+        }
+
+
+        body {
+            background-color: #fff8f0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        .back-button, .next-button, .home-button {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+                width: auto;
+            }
+
+            .back-button:active, .next-button:active, .home-button:active {
+            transform: translateY(0);
+        }
+
+        .back-button:hover, .next-button:hover, .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .next-button {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        
+        .back-button, .next-button, .home-button {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1 rem;
+            width: 160px;
+            height: auto;
+            text-align: center;
+        }
+
+        
+
+
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background:transparent;
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ff8c00;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title-section h1 {
+            font-size: 1.8rem;
+            color: #ff8c00;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .content-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .content-container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #ff8c00;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e67e00;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c00;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 2rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            transform: translateX(10px);
+            color: #000000;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .content-container {
+                padding: 1.5rem;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation" id="backgroundAnimation"></div>
+
+    <header>
+        <div class="header-content">
+            <button class="menu-btn" id="openMenu">☰</button>
+            <div class="title-section">
+                <h1 style="color: #ff3c00;">Digital Safety Resources</h1>
+                <div class="subtitle">An Initiative by Young Indians</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <a href="index.html">Home</a>
+        <!-- <a href="about.html">About</a> -->
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>
+
+    <div class="container">
+        <div class="content-container" id="section1">
+            <h1 style="text-align: center;">ACCESS EXTERNAL RESOURCES</h1>
+            <p>
+                In this section, you'll find a curated list of trustworthy external resources to enhance your digital safety knowledge. We've included information from top government cybersecurity agencies, reputable cybersecurity blogs, news sites, and recommended tools and software to strengthen your digital security.
+            </p>
+            <ul>
+                <li>Government Cybersecurity Agencies</li>
+                <li>Reputable Cybersecurity Blogs and News Sites</li>
+                <li>Tools and Software for Enhancing Digital Security</li>
+            </ul>
+        </div>
+
+        <div class="content-container" id="section2">
+            <h1>Government Cybersecurity Agencies</h1>
+            <ol>
+                <li>
+                    <strong>Indian Computer Emergency Response Team (CERT-In)</strong><br>
+                    CERT-In is the national agency responsible for dealing with cybersecurity threats in India.
+                    <br><a href="https://www.cert-in.org.in/">CERT-In Alerts</a>
+                </li>
+                <li>
+                    <strong>National Critical Information Infrastructure Protection Centre (NCIIPC)</strong><br>
+                    NCIIPC focuses on safeguarding India's critical information infrastructure, particularly in key sectors like energy, banking, telecom, and defense.
+                    <br><a href="https://www.nciipc.gov.in/">NCIIPC Resources</a>
+                </li>
+                <li>
+                    <strong>Cyber and Information Security Division (C&IS)</strong><br>
+                    Part of the Ministry of Home Affairs, C&IS is responsible for implementing cybersecurity policies.
+                    <br><a href="https://www.mha.gov.in/en/divisionofmha/cyber-and-information-security-cis-division">Ministry of Home Affairs - Cyber and Information Security</a><br>
+                    <a href="https://cybercrime.gov.in/Webform/Index.aspx">Cybercrime Resources</a>
+                </li>
+            </ol>
+        </div>
+
+        <div class="content-container" id="section3">
+            <h1>Reputable Cybersecurity Blogs and News Sites India</h1>
+            <ol>
+                <li>
+                    <strong>CyberSafe</strong><br>
+                    CyberSafe is an Indian cybersecurity blog providing regular updates on cybersecurity news and best practices.
+                    <br><a href="https://cybersafe.gov.in/">CyberSafe - Main Site</a>
+                </li>
+                <li>
+                    <strong>SecurityXploded</strong><br>
+                    SecurityXploded is an Indian platform offering cybersecurity resources including blogs, tools, and tutorials.
+                    <br><a href="https://securityxploded.com/">SecurityXploded - Main Site</a>
+                </li>
+                <li>
+                    <strong>The Hacker News India</strong><br>
+                    The Hacker News India provides the latest cybersecurity news, hacking incidents, and expert insights.
+                    <br><a href="https://news.ycombinator.com/">The Hacker News - Main Site</a>
+                </li>
+            </ol>
+        </div>
+
+        <div class="content-container" id="section4">
+            <h1>Tools and Software for Enhancing Digital Security</h1>
+            <ol>
+                <li>
+                    <strong>K7 Total Security</strong><br>
+                    K7 Total Security provides antivirus protection, internet security, and privacy protection features.
+                    <br><a href="https://www.k7computing.com/in/">K7 Total Security - Official Site</a>
+                </li>
+                <li>
+                    <strong>Quick Heal Total Security</strong><br>
+                    Quick Heal is a popular Indian antivirus and internet security software with multiple layers of protection.
+                    <br><a href="https://www.quickheal.co.in/">Quick Heal Total Security - Official Site</a>
+                </li>
+                <li>
+                    <strong>eScan Internet Security Suite</strong><br>
+                    eScan provides antivirus, anti-spam, and anti-phishing features along with data encryption and cloud security.
+                    <br><a href="https://www.escanav.com/en/windows-antivirus/internet-security-suite.asp">eScan - Official Site</a>
+                </li>
+            </ol>
+        </div>
+
+        <button class="next-button" onclick="window.location.href='index.html'">Back to Home</button>
+
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Masoom – Young Indians. All rights reserved.
+    </div>
+
+    <script>
+        // Background animation
+        function createBubbles() {
+            const backgroundAnimation = document.getElementById('backgroundAnimation');
+            const bubbleCount = 20;
+
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+                backgroundAnimation.appendChild(bubble);
+            }
+        }
+
+        // Menu functionality
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            document.body.classList.toggle('offcanvas-open');
+            offcanvasMenu.classList.toggle('active');
+        }
+
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                toggleMenu();
+            });
+        });
+
+        // Initialize
+        createBubbles();
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="title" content="Digital Safety Audit - Assess and Strengthen Your Online Security">
+<meta name="description" content="The Digital Safety Audit helps assess your online security, identifying vulnerabilities cybercriminals could exploit. Discover essential steps to fortify your digital defenses with this initiative by Masoom, Young Indians.">
+<meta name="keywords" content="Digital Safety Audit, Online Security Assessment, Cybersecurity Audit, Masoom Young Indians, Digital Vulnerability Check, Cyber Defense, Online Privacy, Security Evaluation">
+<meta name="author" content="Masoom, Young Indians">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Information Page</title>
+    <style>
+        /* Global Styling */
+
+         /* Off-canvas menu styles */
+         .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c1a;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;  
+            scroll-behavior: smooth;
+        }
+
+        /* Content Container Styling */
+        .content-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .content-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Heading Styling */
+        h1 {
+            text-align: center;
+            color: #ff8c00;
+            padding: 15px;
+            background-color: #fff3e5;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph and List Styling */
+        p, ul, ol {
+            color: #333333;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+        ul li, ol li {
+            margin-bottom: 10px;
+        }
+
+        /* Link Styling */
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+            
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #b96702;
+            text-decoration: underline;
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: auto;
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        /* Scroll Animation */
+        .appear {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: transparent;
+            padding: 15px;
+            text-align: left;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #ff8c00;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        form {
+            background: #fcf3e3;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        form:hover {
+            background-color: #f9ebd5;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer {
+            margin-top: auto;
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:hover, select:hover {
+            border-color: #ff8c00;
+            box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 12px;
+            padding-right: 2rem;
+        }
+
+        button {
+            background-color: transparent;
+    color: #ff8c00;
+    /* padding: 0.75rem 1.5rem; */
+    /* border: none; */
+    /* border-radius: 3px; */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 50px;
+    height: 50px;
+        }
+
+        /* button:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        } */
+
+        .error {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            z-index: 1000;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        
+        .menu-btn {
+            background: none;
+            color: #ff8c1a;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #ff8c1a;
+            margin: 5px 0;
+            border-radius: 1px;
+            transition: 0.3s;
+        }
+
+         /* Off-canvas menu styles */
+         .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c1a;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .offcanvas-menu.active {
+            left: 0;
+        }
+
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .offcanvas-menu a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            form {
+                padding: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="menu-toggle" id="openMenu">☰</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <div style="position: absolute; bottom: 10px; left: 2px; width: 100%; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>
+
+    Content Container -->
+   
+
+
+    <!-- <script>
+       const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const offcanvasMenu = document.getElementById('offcanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            document.body.classList.toggle('offcanvas-open');
+            offcanvasMenu.classList.toggle('active');
+        }
+
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Smooth Scroll Effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on Scroll
+        const contentContainers = document.querySelectorAll('.content-container');
+        window.addEventListener('scroll', function() {
+            contentContainers.forEach(container => {
+                const containerPosition = container.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+                if (containerPosition < screenPosition) {
+                    container.classList.add('appear');
+                }
+            });
+        });
+    </script> -->
+<!-- </body>
+</html> --> 

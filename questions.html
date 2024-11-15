@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Digital Safety Audit - Assess and Strengthen Your Online Security">
+    <meta name="description" content="The Digital Safety Audit helps assess your online security, identifying vulnerabilities cybercriminals could exploit. Discover essential steps to fortify your digital defenses with this initiative by Masoom, Young Indians.">
+    <meta name="keywords" content="Digital Safety Audit, Online Security Assessment, Cybersecurity Audit, Masoom Young Indians, Digital Vulnerability Check, Cyber Defense, Online Privacy, Security Evaluation">
+    <meta name="author" content="Masoom, Young Indians">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Yi Digital Survey Audit</title>
+    <link rel="icon" type="image/x-icon" href="yi-logo.png">
+    
+  
+    <script src="audit-transfer.js"></script>
+    
+  <style>
+        /* General styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+    
+        /* Container styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            /* min-height: auto; */
+            box-sizing: border-box;
+            max-width: 800px;
+            /* box-shadow: 0 2px 6px rgba(35, 35, 35, 0.1); */
+            margin: auto;
+            position: relative;
+            z-index: 1;
+            transition: margin-left 0.3s ease;
+        }
+    
+        /* Header styling */
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+    
+        .menu-icon {    
+            cursor: pointer;
+            z-index: 1000;
+        }
+    
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #ff8c1a;
+            margin: 5px 0;
+            border-radius: 1px;
+            transition: 0.3s;
+        }
+    
+        /* Question styling */
+        h2 {
+            color: #ff8c1a;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+            padding-top: -12px;
+        }
+    
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: left;
+            width: 100%;
+        }
+    
+        /* Options styling */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            align-items: center;
+        }
+    
+        .option {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffe1c2;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 500px;
+            text-align: left;
+        }
+    
+        .option:hover {
+            background-color: #ff8000;
+            color: #fff;
+        }
+    
+        .selected {
+            background-color: #ff8c19;
+        }
+    
+        /* Submit button styling */
+        .submitAnswer {
+            background-color: #ff3c00;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 200px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submitAnswer:hover {
+            background-color: #f13c05;
+            color: white;
+           
+         
+        }
+    
+        /* Scorecard styling */
+        .scorecard {
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: transparent;
+            border-radius: 10px;
+        }
+    
+        .scorecard-header {
+            margin-bottom: 30px;
+        }
+    
+        .scorecard-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    
+        .scorecard-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    
+        .scores-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    
+        .scores-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+    
+        .score-row {
+            display: flex;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            border-width: 2px;
+            box-shadow: 0 2px 6px rgba(35, 35, 35, 0.1);
+        }
+    
+        .score-category {
+            flex: 1;
+            padding: 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+    
+        .score-value {
+            padding: 10px;
+            min-width: 80px;
+            text-align: right;
+            background: white;
+        }
+    
+        /* Score color classes */
+        .score-low .score-category {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+    
+        .score-medium .score-category {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+    
+        .score-high .score-category {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+    
+        .score-overall .score-category {
+            background-color: #fff9c4;
+            color: #f57f17;
+        }
+    
+        .completion-animation {
+            position: relative;
+            height: 200px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+    
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confetti-fall 3s ease-out infinite;
+        }
+    
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100%) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(720deg); }
+        }
+    
+        .completion-message {
+            position: relative;
+            z-index: 1;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            text-align: center;
+        }
+    
+        .tick-circle {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            animation: draw-circle 1s ease-in-out forwards;
+        }
+    
+        .tick-mark {
+            stroke-dasharray: 80;
+            stroke-dashoffset: 80;
+            animation: draw-tick 0.8s ease-in-out forwards 1s;
+        }
+    
+        @keyframes draw-circle {
+            to { stroke-dashoffset: 0; }
+        }
+    
+        @keyframes draw-tick {
+            to { stroke-dashoffset: 0; }
+        }
+    
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: firework-explosion 1s ease-out forwards;
+        }
+    
+        @keyframes firework-explosion {
+            0% { transform: translate(0, 0); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+    
+        .score-bar {
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+            margin-top: 5px;
+        }
+    
+        .score-fill {
+            height: 100%;
+            transition: width 1s ease-out;
+        }
+    
+        .score-low .score-fill { background-color: #ff6b6b; }
+        .score-medium .score-fill { background-color: #feca57; }
+        .score-high .score-fill { background-color: #48dbfb; }
+        .score-overall .score-fill { background-color: #ff9ff3; }
+    
+        .how-to-read {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #cfffde;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #032000;
+        }
+    
+        /* Progress bar styling */
+        .progress-container {
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            /* max-width: 300px; */
+        }
+    
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            flex: 1;
+        }
+    
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ffb468;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+    
+        .step.completed .step-circle {
+            background-color: #4CAF50;
+        }
+    
+        .step-line {
+            position: absolute;
+            top: 15px;
+            left: calc(50% + 15px);
+            width: calc(100% - 30px);
+            height: 2px;
+            background-color: #ffe1c2;
+        }
+    
+        .step:last-child .step-line {
+            display: none;
+        }
+    
+        .step.completed .step-line {
+            background-color: #4CAF50;
+        }
+    
+        /* Background animation */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+    
+        .shape {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+    
+        .footer {
+            margin-top: auto;
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+        
+        .offcanvas-open .offcanvas-menu {
+            left: 0;
+        }   
+    
+        /* Add overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+    
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c1a;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+    
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+    
+        .offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .container {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .section-number {
+                padding: 0px;
+            }
+    
+            .progress-container {
+                /* order: -1; */
+                position: sticky;
+                top: 0;
+                background-color: transparent;
+                padding: 10px 0;
+                margin-bottom: 20px;
+                z-index: 10;
+            }
+    
+            .progress-bar {
+                max-width: 100%;
+            }
+    
+            .step {
+                padding: 0 5px;
+            }
+    
+            .step-circle {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+            }
+    
+            .step-line {
+                top: 12px;
+                left: calc(50% + 12px);
+                width: calc(100% - 24px);
+            }
+    
+            h2 {
+                margin-bottom: 70px;
+                margin-top: 10px;
+            }
+    
+            h3 {
+                margin-top: -45px;
+            }
+        }
+    
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            .section-number {
+                padding: 10px;
+            }
+    
+            .container {
+                justify-content: flex-start;
+                padding-top: 10px;
+            }
+
+            .start-button {
+                width: 100%;
+            }
+    
+            .h2 {
+                padding: 30px;
+            }
+    
+            .h3 {
+                margin-bottom: 10px;
+            }
+    
+            .progress-container {
+                margin-top: 20px;
+            }
+    
+            .options {
+                margin-top: 10px;
+            }
+    
+            .submitAnswer {
+                margin-top: 40px;
+            }
+    
+            .scorecard-footer {
+                /* display: flex; */
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+            }
+    
+            .progress-indicators {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+            }
+    
+            .indicator {
+                width: 10px;
+                height: 10px;
+                background-color: #ff8c00;
+                border-radius: 50%;
+            }
+    
+            .indicator-line {
+                width: 50px;
+                height: 2px;
+                background-color: #ff8c00;
+                margin: 0 5px;
+            }
+        }
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+    
+        .more-about-yuva {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+    
+        .next-button {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .initiative-text {
+            margin-top: auto;
+            padding: 20px 0;
+            text-align: center;
+            font-style: italic;
+            color: #000000;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+    
+        header {
+            padding: 1rem;
+            border-bottom: transparent  ;
+            margin-bottom: 2rem;
+        }
+    
+        .back-button {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            font-size: 16px;
+        }
+    
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+    
+        .title-section {
+            text-align: center;
+            flex-grow: 1;
+        }
+    
+        .title-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+    
+        .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    
+        form {
+            background: #fcf3e3;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+    
+        form:hover {
+            background-color: #f9ebd5;
+        }
+    
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+    
+        .footer {
+            margin-top: auto;
+            background-color: #ff8c00;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+    
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+    
+        input:hover, select:hover {
+            border-color: #ff8c00;
+            box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+        }
+    
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 12px;
+            padding-right: 2rem;
+        }
+    
+        .error {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    
+        .menu-icon {
+            cursor: pointer;
+            z-index: 1000;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+    
+        /* Background Animation */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+    
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 140, 0, 0.1);
+            animation: float 15s infinite;
+        }
+    
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+    
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #ff8c1a;
+            margin: 5px 0;
+            border-radius: 1px;
+            transition: 0.3s;
+        }
+    
+        /* Off-canvas menu styles */
+        .offcanvas-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: #ff8c1a;
+            color: white;
+            z-index: 2000;
+            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+    
+        .offcanvas-menu.active {
+            left: 0;
+        }
+    
+        .offcanvas-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+    
+        .offcanvas-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+    
+        .offcanvas-menu a:hover {
+            color: #000000;
+            transform: translateX(10px);
+        }
+    
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+    
+        body.offcanvas-open .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        @media (max-width: 768px) {
+            .container {
+                /* padding: 1rem; */
+                
+            }
+    
+            form {
+                padding: 1.5rem;
+            }
+
+        
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="background-animation" id="backgroundAnimation"></div>
+    
+
+    <div class="overlay" id="overlay"></div>    
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <a href="index.html">Home</a>
+        <!-- <a href="about.html">About</a> -->
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <div style="position: absolute; bottom: 10px; left: 2px; width: 100%; text-align: center; font-style: italic; color: #000000;">An Initiative by Yi Masoom</div>
+    </div>
+
+    <div id="questionContainer"></div>
+
+    <main class="container" id="scoreboard" style="display: none;">
+       
+        <div id="score"></div>
+    </main>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2024 Masoom – Young Indians. All rights reserved.
+        </div>
+    
+
+    <script>
+
+// Intersection Observer for animation triggers
+const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {    
+            threshold: 0.1
+        });
+
+        // Observe all animated elements
+        document.querySelectorAll('.objective-card, .stats h2, .stats p').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Background animation
+        function createBubbles() {
+            const backgroundAnimation = document.getElementById('backgroundAnimation');
+            const bubbleCount = 20;
+
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                bubble.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+                backgroundAnimation.appendChild(bubble);
+            }
+        }
+
+        createBubbles();
+
+
+
+
+        let selectedOption = null;
+        let answeredQuestions = 0;
+        let totalScore = 0;
+        let categoryScores = {
+            "General Safety": 0,
+            "Password Management and Digital Identity Protection": 0,
+            "Social Media Security": 0,
+            "Financial Digital Safety": 0,
+            "Phishing, Scams, and Cybercrime Awareness": 0,
+            "Mobile Device and App Security": 0,
+            "Cyberbullying, Online Harassment, and Child Online Protection": 0,
+            "Online Gaming and Entertainment Safety": 0,
+            "Digital Literacy, Fact-Checking, and Misinformation Awareness": 0
+        };
+
+        const questionsData = [
+{
+    category: "General Safety",
+    question: "How do you secure your phone that you use?",
+    options: [
+        { text: "I don't use any special security", score: 2 },
+        { text: "I use a simple screen lock (like pattern or simple PIN)", score: 2 },
+        { text: "I use a strong password or PIN", score: 4 },
+        { text: "I use biometric lock (fingerprint/face recognition)", score: 5 },
+        { text: "I use biometric lock plus regular security updates", score: 5 }
+    ]
+},
+
+
+{
+    category: "General Safety",
+    question: "How often do you find yourself mindlessly scrolling through social media?",
+    options: [
+        { text: "Multiple times every hour", score: 0 },
+        { text: "A few times each day", score: 0 },
+        { text: "Once or twice a day", score: 0 },
+        { text: "A few times a week", score: 0 },
+        { text: "I do not own social media accounts", score: 0 }
+    ]
+},
+{
+    category: "General Safety",
+    question: "How familiar are you with the latest common online scams?",
+    options: [
+        { text: "Not at all familiar - I've never heard of any scams", score: -1 },
+        { text: "Slightly familiar - I've heard of them but can't identify them if they happened to me", score: 0 },
+        { text: "Moderately familiar - I can identify some common scams", score: 2 },
+        { text: "Very familiar - I can identify most common scams", score: 4 },
+        { text: "Extremely familiar - I stay updated on latest scam techniques", score: 5 }
+    ]
+},
+{
+    category: "General Safety",
+    question: "Are you aware of the difference between HTTP and HTTPS?",
+    options: [
+        { text: "I don't know what these mean", score: -2 },
+        { text: "I've heard of them but don't know the difference", score: 0 },
+        { text: "I have a basic understanding of the difference", score: 2 },
+        { text: "I understand the difference and prefer HTTPS", score: 4 },
+        { text: "I always ensure I'm using HTTPS for sensitive transactions", score: 5 }
+    ]
+},
+{
+    category: "General Safety",
+    question: "What's your approach to using Bluetooth in public places?",
+    options: [
+        { text: "I always keep Bluetooth on and discoverable", score: -2 },
+        { text: "I keep Bluetooth on but not discoverable", score: 1 },
+        { text: "I turn Bluetooth off when not in use", score: 4 },
+        { text: "I only turn Bluetooth on when I need to use it", score: 5 },
+        { text: "I rarely or never use Bluetooth in public places", score: 5 }
+    ]
+},
+{
+    category: "General Safety",
+    question: "How do you give away or sell old devices (phones, computers)?",
+    options: [
+        { text: "I just give them to whoever gives me a good deal", score: 0 },
+        { text: "I delete some files but don't do anything special before giving them away", score: 1 },
+        { text: "I use the device's built-in reset feature before giving them away", score: 3 },
+        { text: "I delete all data and then use a reset feature before giving them away", score: 5 },
+        { text: "I use specialized software to securely erase all data before giving them away", score: 5 }
+    ]
+},
+{
+    category: "General Safety",
+    question: "Are you aware of official channels to report cybercrimes in India?",
+    options: [
+        { text: "Not at all aware", score: 0 },
+        { text: "I've heard there are ways but don't know specifics", score: 1 },
+        { text: "I know one way to report", score: 3 },
+        { text: "I'm aware of multiple reporting channels", score: 5 },
+        { text: "I'm very familiar with various reporting options and have used them", score: 5 }
+    ]
+},
+
+  {
+    category: "Password Management and Digital Identity Protection",
+    question: "How often do you change your passwords?",
+    options: [
+      { text: "I never change my passwords", score: -2 },
+      { text: "I only change them when a website asks me", score: 0 },
+      { text: "I change them about once a year", score: 2 },
+      { text: "I change them every few months", score: 5 },
+      { text: "I change them monthly or more often", score: 3 }
+    ]
+  },
+  {
+    category: "Password Management and Digital Identity Protection",
+    question: "Do you use different passwords for different accounts?",
+    options: [
+      { text: "I use the same password for all my accounts", score: -5 },
+      { text: "I use the same password for most accounts, with a few exceptions", score: -2 },
+      { text: "I use a few different passwords across my accounts", score: 2 },
+      { text: "I use many different passwords, but some might be similar with minor alterations", score: 4 },
+      { text: "I use a unique password for every account", score: 5 }
+    ]
+  },
+  {
+    category: "Password Management and Digital Identity Protection",
+    question: "How do you usually create your passwords?",
+    options: [
+      { text: "I use easily remembered information like birthdays or names", score: -5 },
+      { text: "I use simple words or number sequences", score: -2 },
+      { text: "I combine words and numbers in a way that's meaningful to me", score: 2 },
+      { text: "I create random combinations of letters, numbers, and symbols", score: 4 },
+      { text: "I use a password generator or manager to create complex passwords", score: 5 }
+    ]
+  },
+  {
+    category: "Password Management and Digital Identity Protection",
+    question: "Do you use two-factor authentication when available?",
+    options: [
+      { text: "I'm not sure what two-factor authentication is", score: 0 },
+      { text: "I know what it is, but I never use it", score: -1 },
+      { text: "I use it on a few of my most important accounts", score: 2 },
+      { text: "I use it on many of my accounts", score: 4 },
+      { text: "I always use it when it's an option", score: 5 }
+    ]
+  },
+  {
+    category: "Password Management and Digital Identity Protection",
+    question: "How do you store your passwords?",
+    options: [
+      { text: "I write them down on paper or in a notebook", score: -5 },
+      { text: "I save them in a file (Google, Excel, etc.) or note on my computer or phone", score: -3 },
+      { text: "I try to memorize all my passwords", score: 1 },
+      { text: "I use a dedicated password manager application (Includes Google Password Manager)", score: 4 },
+      { text: "I let my web browser remember and auto-fill my passwords", score: 2 }
+    ]
+  },
+  {
+    category: "Password Management and Digital Identity Protection",
+    question: "Have you ever shared your password with someone else?",
+    options: [
+      { text: "Yes, I often share my passwords with others", score: -5 },
+      { text: "Yes, I've shared passwords with family members or close friends", score: -1 },
+      { text: "Yes, but only in rare, necessary situations", score: 3 },
+      { text: "No, I've never shared my passwords with anyone", score: 5 }
+    ]
+  },
+  {
+    category: "Password Management and Digital Identity Protection",
+    question: "How careful are you about protecting your Aadhaar number?",
+    options: [
+      { text: "I don't take any special precautions with my Aadhaar number", score: 0 },
+      { text: "I'm somewhat careful but don't worry too much about it", score: 1 },
+      { text: "I'm reasonably careful and only share it when necessary", score: 2 },
+      { text: "I'm very careful and rarely share my Aadhaar number", score: 4 },
+      { text: "I'm extremely protective and never share my Aadhaar number unless absolutely required", score: 5 }
+    ]
+  },
+
+  {
+    category: "Social Media Security",
+    question: "How often do you review and update your privacy settings on social media?",
+    options: [
+      { text: "I've never checked my privacy settings", score: 0 },
+      { text: "I only check when I hear about a security issue", score: 2 },
+      { text: "I check and review my privacy settings about once a year", score: 3 },
+      { text: "I check and review my privacy settings every few months", score: 5 },
+      { text: "I check and review my privacy settings monthly or more frequently", score: 4 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "When you receive a friend or connection request from someone you don't know, what do you usually do?",
+    options: [
+      { text: "I always accept all requests", score: -2 },
+      { text: "I usually accept without checking", score: 0 },
+      { text: "I sometimes check their profile before accepting", score: 1 },
+      { text: "I usually ignore unless I recognize the name", score: 4 },
+      { text: "I always ignore requests from strangers", score: 5 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "How careful are you about the personal information you share on social media?",
+    options: [
+      { text: "I share everything without worry", score: -2 },
+      { text: "I share most things but avoid very private information", score: 0 },
+      { text: "I'm somewhat careful about what I share", score: 1 },
+      { text: "I'm very careful and limit personal information", score: 3 },
+      { text: "I never share personal information", score: 5 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "How often do you use location tagging in your social media posts?",
+    options: [
+      { text: "I always use location tagging", score: -1 },
+      { text: "I use it often, for most of my posts", score: 0 },
+      { text: "I use it sometimes, for special occasions", score: 2 },
+      { text: "I rarely use location tagging", score: 4 },
+      { text: "I never use location tagging", score: 5 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "Have you ever checked if your social media accounts are linked to third-party apps or websites?",
+    options: [
+      { text: "I don't know what this means", score: -2 },
+      { text: "No, I've never checked", score: 0 },
+      { text: "I've checked once or twice", score: 2 },
+      { text: "I check occasionally", score: 4 },
+      { text: "I regularly review and manage linked apps", score: 5 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "How strong is the password you use for your social media accounts?",
+    options: [
+      { text: "Very weak (e.g., simple words or numbers)", score: -1 },
+      { text: "Somewhat weak (e.g., common phrases)", score: 0 },
+      { text: "Moderate (e.g., mix of letters and numbers)", score: 2 },
+      { text: "Strong (e.g., mix of uppercase, lowercase, numbers, and symbols)", score: 4 },
+      { text: "Very strong (e.g., long, random combination or generated by password manager)", score: 5 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "How do you typically access your social media accounts?",
+    options: [
+      { text: "Only on my personal devices", score: 5 },
+      { text: "Mostly on personal devices, sometimes on shared/public/work computers", score: 3 },
+      { text: "On any device available, including public computers", score: -2 },
+      { text: "Only through official apps on my smartphone", score: 5 },
+      { text: "Through both apps and web browsers on various devices", score: 2 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "How often do you check the authenticity of news or information before sharing it on social media?",
+    options: [
+      { text: "I never check, I share what interests me", score: 2 },
+      { text: "I rarely check the source or authenticity", score: 2 },
+      { text: "I sometimes check if something seems suspicious", score: 3 },
+      { text: "I often verify information before sharing", score: 4 },
+      { text: "I always verify from multiple sources before sharing anything", score: 5 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "Have you ever experienced or suspected unauthorized access to any of your social media accounts?",
+    options: [
+      { text: "Yes, multiple times my account has been hacked or has been accessed without my authorization", score: -5 },
+      { text: "Yes, once or twice my account has been hacked or has been accessed without my authorization", score: -2 },
+      { text: "I'm not sure, but I've had suspicions", score: -1 },
+      { text: "No, never has my account been hacked or accessed without my authorization", score: 5 },
+      { text: "I don't know how to tell if this has happened", score: 0 }
+    ]
+  },
+  {
+    category: "Social Media Security",
+    question: "How do you handle suspicious messages or links sent to you on social media?",
+    options: [
+      { text: "I usually click on them to see what they are", score: -2 },
+      { text: "I ignore them and don't take any other action", score: 0 },
+      { text: "I sometimes report them as suspicious", score: 1 },
+      { text: "I always report them and warn the sender if it's someone I know", score: 3 },
+      { text: "I immediately block the sender and report to the platform", score: 5 }
+    ]
+  },
+
+  {
+    category: "Financial Digital Safety",
+    question: "How often do you check your online bank statements or transaction history?",
+    options: [
+      { text: "I never check them online", score: 0 },
+      { text: "Only when I suspect a problem", score: -1 },
+      { text: "Once a month or less", score: 3 },
+      { text: "Weekly", score: 5 },
+      { text: "Daily or every few days", score: 3 }
+    ]
+  },
+  {
+    category: "Financial Digital Safety",
+    question: "How do you protect access to your digital payment apps (like UPI apps)?",
+    options: [
+      { text: "I don't use any protection", score: -5 },
+      { text: "I use a simple PIN (like 1234 or birth year)", score: -3 },
+      { text: "I use a unique PIN for each app", score: 5 },
+      { text: "I use biometric authentication (fingerprint/face recognition)", score: 5 },
+      { text: "I use a combination of strong PIN and biometric authentication", score: 5 }
+    ]
+  },
+  {
+    category: "Financial Digital Safety",
+    question: "How often do you update the passwords for your online financial accounts?",
+    options: [
+      { text: "I've never changed them", score: -5 },
+      { text: "Only when required by the bank/service", score: 2 },
+      { text: "Once a year", score: 3 },
+      { text: "Every few months", score: 5 },
+      { text: "Monthly or more frequently", score: 3 }
+    ]
+  },
+  {
+    category: "Financial Digital Safety",
+    question: "What do you do when you receive an unexpected call or message asking for your financial information?",
+    options: [
+      { text: "I provide the information if they seem genuine", score: -5 },
+      { text: "I sometimes provide information after asking a few questions", score: -2 },
+      { text: "I refuse to give information but don't report it", score: 0 },
+      { text: "I refuse and report it to my bank", score: 3 },
+      { text: "I refuse, report to my bank, and alert authorities if it seems like a scam", score: 5 }
+    ]
+  },
+  {
+    category: "Financial Digital Safety",
+    question: "When using e-commerce websites, how do you typically pay?",
+    options: [
+      { text: "I always choose Cash on Delivery", score: 4 },
+      { text: "I use my debit card directly on the website", score: 4 },
+      { text: "I use my credit card for better protection", score: 4 },
+      { text: "I use digital wallets or UPI", score: 4 },
+      { text: "I choose based on the website's reputation and available secure payment options", score: 5 }
+    ]
+  },
+  {
+    category: "Financial Digital Safety",
+    question: "How familiar are you with identifying fake shopping websites or apps?",
+    options: [
+      { text: "I'm not sure how to identify them", score: 0 },
+      { text: "I have a vague idea but I'm not confident", score: 0 },
+      { text: "I know some signs to look out for", score: 2 },
+      { text: "I'm quite confident in identifying most fake sites/apps", score: 4 },
+      { text: "I'm very knowledgeable and always thoroughly verify before using", score: 5 }
+    ]
+  },
+  {
+    category: "Financial Digital Safety",
+    question: "How do you verify the authenticity of a website before entering sensitive information?",
+    options: [
+      { text: "I don't do any verification", score: -1 },
+      { text: "I check if the website looks professional", score: 2 },
+      { text: "I look for 'https' in the web address", score: 3 },
+      { text: "I check for https and verify the site's security certificate", score: 4 },
+      { text: "I do all of the above plus cross-verify with official sources", score: 5 }
+    ]
+  },
+
+  { 
+    category: "Phishing, Scams, and Cybercrime Awareness",
+    question: "How confident are you in identifying phishing emails or messages?",
+    options: [
+      { text: "Not at all confident - I don't know what phishing is", score: -2 },
+      { text: "Slightly confident - I've heard of phishing but am unsure how to identify it", score: 0 },
+      { text: "Moderately confident - I can sometimes spot phishing attempts", score: 3 },
+      { text: "Very confident - I can usually identify phishing attempts", score: 4 },
+      { text: "Extremely confident - I can almost always identify phishing attempts", score: 5 }
+    ]
+  },
+  {
+    category: "Phishing, Scams, and Cybercrime Awareness",
+    question: "What do you typically do when you receive an email asking you to urgently update your account information? (KYC, etc.)",
+    options: [
+      { text: "I immediately click the link and update my information", score: -3 },
+      { text: "I sometimes update if the email looks official", score: 1 },
+      { text: "I ignore the email but don't take any other action", score: 0 },
+      { text: "I check the sender's email address and any links before taking action", score: 4 },
+      { text: "I never click on links in such emails and verify directly with the company", score: 5 }
+    ]
+  },
+  {
+    category: "Phishing, Scams, and Cybercrime Awareness",
+    question: "If you receive a call claiming to be from your bank asking for account/OTP or other details, what would you do?",
+    options: [
+      { text: "Provide the information if they can verify some of my details", score: -3 },
+      { text: "Provide limited information but not everything", score: -1 },
+      { text: "Refuse to give information over the phone", score: 0 },
+      { text: "Hang up and call my bank's official number to verify", score: 3 },
+      { text: "Report the call to my bank and relevant authorities", score: 5 }
+    ]
+  },
+  {
+    category: "Phishing, Scams, and Cybercrime Awareness",
+    question: "What's your usual response to requests for money or personal information from someone from your contacts on social media?",
+    options: [
+      { text: "I send money or information immediately to help", score: -5 },
+      { text: "I sometimes help if the story is convincing", score: -4 },
+      { text: "I try to verify by contacting the person through other means", score: 2 },
+      { text: "I'm cautious and rarely respond to such requests", score: 0 },
+      { text: "I never respond and report such messages as potential scams", score: 5 }
+    ]
+  },
+
+
+  {
+    category: "Mobile Device and App Security",
+    question: "Where do you typically download mobile apps from?",
+    options: [
+      { text: "I download from any source I find online", score: -5 },
+      { text: "I mostly use official app stores but sometimes use other sources", score: -1 },
+      { text: "I only use official app stores (like Google Play or App Store)", score: 3 },
+      { text: "I use official app stores and check app ratings/reviews", score: 4 },
+      { text: "I use official stores, check reviews, and research the app developer", score: 5 }
+    ]
+  },
+  {
+    category: "Mobile Device and App Security",
+    question: "How often do you review the permissions requested by apps on your device?",
+    options: [
+      { text: "I've never checked app permissions", score: -1 },
+      { text: "I rarely check permissions", score: -1 },
+      { text: "I sometimes check for new or unfamiliar apps", score: 0 },
+      { text: "I often review permissions for most apps", score: 3 },
+      { text: "I always carefully review permissions for every app", score: 5 }
+    ]
+  },
+  {
+    category: "Mobile Device and App Security",
+    question: "Do you use antivirus or security apps on your mobile device?",
+    options: [
+      { text: "No, I don't think mobile devices need antivirus", score: 0 },
+      { text: "No, but I've considered it", score: 0 },
+      { text: "I have one installed but rarely use it", score: 3 },
+      { text: "Yes, I have one and use it occasionally", score: 4 },
+      { text: "Yes, I have one and use it regularly", score: 5 }
+    ]
+  },
+  {
+    category: "Mobile Device and App Security",
+    question: "How do you handle Wi-Fi connections on your mobile device?",
+    options: [
+      { text: "I connect to any available free Wi-Fi", score: -3 },
+      { text: "I connect to free Wi-Fi in public places I trust", score: -1 },
+      { text: "I mostly use mobile data and avoid public Wi-Fi", score: 0 },
+      { text: "I use public Wi-Fi only with a VPN", score: -1 },
+      { text: "I only connect to secure, password-protected networks I trust", score: 5 }
+    ]
+  },
+  {
+    category: "Mobile Device and App Security",
+    question: "What do you do with apps you no longer use?",
+    options: [
+      { text: "I keep all apps I've ever downloaded", score: 0 },
+      { text: "I sometimes delete apps if I need space", score: 1 },
+      { text: "I regularly delete apps I don't use", score: 3 },
+      { text: "I delete unused apps and clear their data", score: 5 },
+      { text: "I delete unused apps, clear data, and revoke permissions", score: 5 }
+    ]
+  },
+
+
+    {
+        category: "Cyberbullying, Online Harassment, and Child Online Protection",
+        question: "How familiar are you with the term \"cyberbullying\"?",
+        options: [
+            { text: "I've never heard of it", score: 0 },
+            { text: "I've heard the term but don't really know what it means", score: 0 },
+            { text: "I have a basic understanding of cyberbullying", score: 2 },
+            { text: "I'm familiar with cyberbullying and its various forms", score: 3 },
+            { text: "I'm very knowledgeable about cyberbullying and how to address it", score: 5 }
+        ]
+    },
+    {
+        category: "Cyberbullying, Online Harassment, and Child Online Protection",
+        question: "What would you do if you received threatening or harassing messages online?",
+        options: [
+            { text: "I would ignore them", score: 1 },
+            { text: "I would respond to the sender", score: 2 },
+            { text: "I would block the sender", score: 3 },
+            { text: "I would report it to the platform and block the sender", score: 4 },
+            { text: "I would report to the platform, block the sender, and seek help if needed from parents/teachers/someone I trust", score: 5 }
+        ]
+    },
+    {
+        category: "Cyberbullying, Online Harassment, and Child Online Protection",
+        question: "How often do you get threatening or harassing messages online?",
+        options: [
+            { text: "All the time (multiple times a month)", score: -5 },
+            { text: "About once or twice every few months", score: -2 },
+            { text: "Not that often (once a year)", score: -1 },
+            { text: "Very rarely", score: -1 },
+            { text: "I never get such messages online", score: 5 }
+        ]
+    },
+    {
+        category: "Cyberbullying, Online Harassment, and Child Online Protection",
+        question: "If you witnessed someone getting cyberbullied (friends and relatives), what would you do?",
+        options: [
+            { text: "I would ignore it as I do not know what to do", score: -2 },
+            { text: "I might tell the person being bullied privately to take action themselves", score: 0 },
+            { text: "I would report it to the platform (e.g., social media site)", score: 0 },
+            { text: "I would confront the bully online", score: 2 },
+            { text: "I would report it to authorities/parents/family", score: 5 }
+        ]
+    },
+    {
+        category: "Cyberbullying, Online Harassment, and Child Online Protection",
+        question: "How confident are you in recognizing signs of online grooming or exploitation?",
+        options: [
+            { text: "I don't know what online grooming is", score: 0 },
+            { text: "I've heard of it but wouldn't recognize the signs", score: 0 },
+            { text: "I have a basic idea of what to look out for", score: 1 },
+            { text: "I'm fairly confident I could recognize the signs", score: 3 },
+            { text: "I'm very knowledgeable and actively educate others about this", score: 5 }
+        ]
+    },
+
+    {
+        category: "Online Gaming and Entertainment Safety",
+        question: "How often do you check age ratings before playing games or watching online content?",
+        options: [
+            { text: "I never check age ratings", score: 0 },
+            { text: "I rarely check, only if something seems concerning", score: 2 },
+            { text: "I sometimes check for unfamiliar content", score: 2 },
+            { text: "I usually check ratings for new games or shows", score: 4 },
+            { text: "I always check and follow age ratings for all content", score: 5 }
+        ]
+    },
+    {
+        category: "Online Gaming and Entertainment Safety",
+        question: "How do you approach communicating with strangers in online games?",
+        options: [
+            { text: "I freely share personal information", score: -5 },
+            { text: "I chat openly but avoid sharing personal details", score: 0 },
+            { text: "I'm cautious and limit interactions", score: 2 },
+            { text: "I only communicate about the game", score: 5 },
+            { text: "I disable chat features or avoid communication with strangers", score: 5 }
+        ]
+    },
+    {
+        category: "Online Gaming and Entertainment Safety",
+        question: "Are you aware of the potential for cyberbullying or harassment in online gaming communities?",
+        options: [
+            { text: "I didn't know this was an issue", score: 0 },
+            { text: "I've heard about it but haven't experienced it", score: 2 },
+            { text: "I'm somewhat aware and try to avoid it", score: 2 },
+            { text: "I'm well aware and know how to report issues", score: 4 },
+            { text: "I'm very knowledgeable and actively work to create positive gaming environments", score: 5 }
+        ]
+    },
+    {
+        category: "Online Gaming and Entertainment Safety",
+        question: "How do you verify the legitimacy of gaming or entertainment apps/websites before using them?",
+        options: [
+            { text: "I don't verify, I use any site that has what I want", score: -2 },
+            { text: "I sometimes check if the site looks professional", score: 0 },
+            { text: "I look for \"https\" and basic signs of legitimacy", score: 2 },
+            { text: "I research the site and read reviews before using", score: 4 },
+            { text: "I only use well-known, verified platforms and official sources", score: 5 }
+        ]
+    },
+    {
+        category: "Online Gaming and Entertainment Safety",
+        question: "How do you handle requests to meet offline from people you've met through online gaming?",
+        options: [
+            { text: "I would meet without hesitation", score: -5 },
+            { text: "I might meet if we've talked for a while online", score: -3 },
+            { text: "I would be very cautious and probably decline", score: 4 },
+            { text: "I never meet online acquaintances in person", score: 5 },
+            { text: "I report such requests as they're often against platform rules", score: 5 }
+        ]
+    },
+
+    {
+        category: "Digital Literacy, Fact-Checking, and Misinformation Awareness",
+        question: "How familiar are you with the term \"fake news\"?",
+        options: [
+            { text: "I've never heard of it", score: -2 },
+            { text: "I've heard the term but I'm not sure what it means", score: -1 },
+            { text: "I have a basic understanding of what fake news is", score: 2 },
+            { text: "I'm familiar with fake news and can often identify it", score: 4 },
+            { text: "I'm very knowledgeable about fake news and actively combat its spread", score: 5 }
+        ]
+    },
+    {
+        category: "Digital Literacy, Fact-Checking, and Misinformation Awareness",
+        question: "Which of these do you consider as a reliable method to fact-check information? (Select multiple options, if necessary)",
+        options: [
+            { text: "Checking if many people have shared it on social media", score: -5 },
+            { text: "Asking friends or family if they've heard about it", score: -2 },
+            { text: "Looking for the same information on different websites", score: -2 },
+            { text: "Using dedicated fact-checking websites", score: 4 },
+            { text: "Cross-referencing with multiple reputable sources and fact-checking sites", score: 5 }
+        ]
+    },
+    {
+        category: "Digital Literacy, Fact-Checking, and Misinformation Awareness",
+        question: "How do you handle information from messaging apps or social media that urges you to \"share with everyone you know\"?",
+        options: [
+            { text: "I share it immediately to help spread important information", score: -2 },
+            { text: "I usually share it if it seems urgent", score: 0 },
+            { text: "I'm cautious and might check it first", score: 2 },
+            { text: "I rarely share such messages and usually fact-check them", score: 4 },
+            { text: "I never share such messages and report them as potential misinformation", score: 5 }
+        ]
+    }
+
+
+
+];
+
+  function showScoreboard() {
+    const scoreContainer = document.getElementById("score");
+    let scoreboardHTML = `
+
+
+
+    
+        <div class="scorecard">
+                <a href="index.html">
+
+            <button id="backButton" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            
+            </button>
+                
+</a>
+
+
+
+            <div class="completion-animation">
+                <div class="completion-message">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="#4CAF50" stroke-width="5" />
+                        <path class="tick-mark" d="M25 50 L45 70 L75 40" fill="none" stroke="#4CAF50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>Completed!</p>
+                </div>
+            </div>
+            <div class="scorecard-subtitle">Thank you for taking the time to complete the survey!</div>
+            
+            <div class="scores-title">SCORES</div>
+            <div class="scores-subtitle">Now, it is time to self audit your digital safety.</div>
+    `;
+
+    let overallScore = 0;
+    let maxPossibleScore = 0;
+    let scoresToRecord = {};
+
+    Object.entries(categoryScores).forEach(([category, score]) => {
+        const maxScore = questionsData.filter(q => q.category === category).reduce((sum, q) => sum + Math.max(...q.options.map(o => o.score)), 0);
+        const percentage = (score / maxScore) * 100;
+        const scoreClass = percentage < 40 ? 'score-low' : percentage < 70 ? 'score-medium' : 'score-high';
+
+        scoreboardHTML += `
+            <div class="score-row ${scoreClass}">
+                <div class="score-category">${category}</div>
+                <div class="score-value">${percentage.toFixed(0)}%</div>
+                <div class="score-bar">
+                    <div class="score-fill" style="width: ${percentage}%;"></div>
+                </div>
+            </div>
+        `;
+
+        overallScore += score;
+        maxPossibleScore += maxScore;
+        scoresToRecord[category] = percentage.toFixed(0);
+    });
+
+    const overallPercentage = (overallScore / maxPossibleScore) * 100;
+    scoreboardHTML += `
+        <div class="score-row score-overall">
+            <div class="score-category">Overall Score</div>
+            <div class="score-value">${overallPercentage.toFixed(0)}%</div>
+            <div class="score-bar">
+                <div class="score-fill" style="width: ${overallPercentage}%;"></div>
+            </div>
+        </div>
+     
+
+        <div class="scorecard-footer">
+            
+           
+            <button id="nextButton" class="next-button" onclick="window.location.href='marking.html'"  style="text-align: center;">Learn About the Scoring</button>
+
+        </div>
+
+        <div class="initiative-text">An initiative of Masoom by Young Indians</div>
+
+        <div class="progress-indicators">
+            <div class="indicator"></div>
+            <div class="indicator-line"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+    `;
+
+    scoreContainer.innerHTML = scoreboardHTML;
+    document.getElementById("scoreboard").style.display = 'flex';
+
+    // Add firework animation
+    const completionAnimation = document.querySelector('.completion-animation');
+    for (let i = 0; i < 50; i++) {
+        const firework = document.createElement('div');
+        firework.className = 'firework';
+        firework.style.left = '50%';
+        firework.style.top = '50%';
+        firework.style.backgroundColor = getRandomColor();
+        firework.style.setProperty('--tx', `${(Math.random() - 0.5) * 200}px`);
+        firework.style.setProperty('--ty', `${(Math.random() - 0.5) * 200}px`);
+        firework.style.animationDelay = `${Math.random() * 0.5}s`;
+        completionAnimation.appendChild(firework);
+    }
+
+    // Record scores
+    scoresToRecord['Overall Score'] = overallPercentage.toFixed(0);
+    recordScores(scoresToRecord);
+
+    // Add event listeners for new buttons
+    document.getElementById('backButton').addEventListener('click', goBack);
+    document.getElementById('nextButton').addEventListener('click', goNext);
+}
+
+function goBack() {
+    window.location.href = 'index.html';
+}
+
+function goNext() {
+    window.location.href = 'index.html';
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function recordScores(scores) {
+    // Implement your score recording logic here
+    console.log('Scores recorded:', scores);
+}
+function goBack() {
+    window.location.href = 'index.html';
+}
+
+function goNext() {
+    // Implement your next functionality here
+    console.log('Next button clicked');
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function recordScores(scores) {
+    // Implement your score recording logic here
+    console.log('Scores recorded:', scores);
+}
+function goBack() {
+    // Implement your back functionality here
+    console.log('Back button clicked');
+}
+
+function goNext() {
+    // Implement your next functionality here
+    console.log('Next button clicked');
+}
+function simulateQuiz() {
+            let overallScore = 0;
+            let maxPossibleScore = 0;
+            let responses = {};
+
+            questionsData.forEach((question, index) => {
+                const randomOptionIndex = Math.floor(Math.random() * question.options.length);
+                const selectedOption = question.options[randomOptionIndex];
+                const score = selectedOption.score;
+
+                categoryScores[question.category] += score;
+                overallScore += score;
+                maxPossibleScore += Math.max(...question.options.map(o => o.score));
+
+                responses[`Q${index + 1}`] = selectedOption.text;
+            });
+
+            showScoreboard(overallScore, maxPossibleScore);
+            recordResponses(responses);
+        }
+
+
+async function recordScores(scores) {
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzQAyDNCLw-IAjxFhEvxUMiTuozCAA2v7dIqdUfnZNdcVpNhpNYv8ZmWJAIgcElpbO6/exec';
+    
+    try {
+        const response = await fetch(scriptUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(scores),
+        });
+
+        console.log('Scores recorded successfully');
+    } catch (error) {
+        console.error('Error recording scores:', error);
+    }
+}
+
+
+        function createQuestionElement(questionData, questionNumber) {
+            const questionElement = document.createElement('main');
+            questionElement.className = 'container';
+            questionElement.id = `question${questionNumber}`;
+            questionElement.style.display = questionNumber === 1 ? 'flex' : 'none';
+
+            questionElement.innerHTML = `
+                <header class="header">
+                    <div class="menu-icon" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </header>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="section-number">Section ${Math.ceil(questionNumber / 7)}</div>
+                <h2>${questionData.category}</h2>
+                <h3 style="text-align: center;" data-question-number="${questionNumber}">${questionData.question}</h3>
+
+                <div class="options" id="options${questionNumber}">
+                    ${questionData.options.map(option => `
+                        <button class="option" onclick="selectOption(this)">${option.text}</button>
+                    `).join('')}
+                </div>
+
+                <button class="submitAnswer" onclick="submitAnswer()">SUBMIT</button>
+            `;
+
+            return questionElement;
+        }
+
+        function initializeQuestions() {
+            const questionContainer = document.getElementById('questionContainer');
+            questionsData.forEach((questionData, index) => {
+                const questionElement = createQuestionElement(questionData, index + 1);
+                questionContainer.appendChild(questionElement);
+            });
+        }
+
+        function selectOption(button) {
+            const options = button.parentElement.getElementsByClassName('option');
+            for (let option of options) {
+                option.classList.remove('selected');
+            }
+            button.classList.add('selected');
+            selectedOption = button;
+        }
+
+        function submitAnswer() {
+    if (selectedOption) {
+        const currentQuestionId = selectedOption.closest('.container').id;
+        const currentQuestionNumber = parseInt(currentQuestionId.replace('question', ''));
+        const nextQuestionNumber = currentQuestionNumber + 1;
+
+        let currentQuestion = questionsData[currentQuestionNumber - 1];
+        let points = currentQuestion.options[Array.from(selectedOption.parentElement.children).indexOf(selectedOption)].score;
+
+        totalScore += points;
+        categoryScores[currentQuestion.category] += points;
+
+        selectedOption.style.backgroundColor = '#ff8c19';
+        selectedOption.style.color = 'white';
+
+        answeredQuestions++;
+        updateProgressBar();
+
+        setTimeout(() => {
+            document.getElementById(currentQuestionId).style.display = 'none';
+
+            if (answeredQuestions === questionsData.length) {
+                showScoreboard();
+            } else {
+                document.getElementById(`question${nextQuestionNumber}`).style.display = 'flex';
+            }
+
+            selectedOption = null;
+        }, 1000);
+    } else {
+        alert("Please select an option before submitting.");
+    }
+}
+
+
+function updateProgressBar() {
+    const progressContainers = document.querySelectorAll('.progress-container');
+    progressContainers.forEach(container => {
+        const progressBar = container.querySelector('.progress-bar');
+        progressBar.innerHTML = '';  // Clear existing progress bar elements
+
+        // Extract all unique categories
+        const categories = [...new Set(questionsData.map(q => q.category))];
+        let currentQuestionIndex = 0;
+
+        categories.forEach((category, index) => {
+            const step = document.createElement('div');
+            step.className = 'step';
+            const circle = document.createElement('div');
+            circle.className = 'step-circle';
+
+            // Filter questions by current category
+            const categoryQuestions = questionsData.filter(q => q.category === category);
+            const totalQuestionsInSection = categoryQuestions.length;
+
+            // Count the number of answered questions in this category
+            const answeredInSection = categoryQuestions.reduce((count, question) => {
+                const questionIndex = questionsData.indexOf(question);
+                return questionIndex < answeredQuestions ? count + 1 : count;
+            }, 0);
+
+            // Check if all questions in this section are answered
+            if (answeredInSection === totalQuestionsInSection) {
+                step.classList.add('completed');
+                circle.innerHTML = '✓';  // Show tick for completed section
+            } else {
+                circle.innerHTML = index + 1;  // Show section number
+            }
+
+            step.appendChild(circle);
+
+            // Add line connector except for the last section
+            if (index < categories.length - 1) {
+                const line = document.createElement('div');
+                line.className = 'step-line';
+                step.appendChild(line);
+            }
+
+            progressBar.appendChild(step);
+        });
+
+        container.setAttribute('aria-valuenow', answeredQuestions);
+    });
+}
+
+    
+        function toggleMenu() {
+            const menu = document.getElementById('offcanvasMenu');
+            const overlay = document.getElementById('overlay');
+            menu.classList.toggle('active');
+            document.body.classList.toggle('offcanvas-open');
+            overlay.style.display = menu.classList.contains('active') ? 'block' : 'none';
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function createBackgroundAnimation() {
+            const background = document.getElementById('background');
+            const numShapes = 10;
+                
+            for (let i = 0; i < numShapes; i++) {
+                const shape = document.createElement('div');
+                shape.className = 'shape';
+                shape.style.width = `${Math.random() * 100 + 50}px`;
+                shape.style.height = shape.style.width;
+                shape.style.left = `${Math.random() * 100}%`;
+                shape.style.top = `${Math.random() * 100}%`;
+                shape.style.animationDelay = `${Math.random() * 10}s`;
+                background.appendChild(shape);
+            }
+        }
+
+        function toggleMenu() {
+            document.body.classList.toggle('offcanvas-open');
+        }
+
+        // Initialize questions
+        initializeQuestions();
+
+        // Initialize progress bar for all questions
+        updateProgressBar();
+
+        // Create background animation
+        createBackgroundAnimation();
+    </script>
+</body>
+</html>
+
